@@ -1,0 +1,13 @@
+{
+    // "files.associations": {
+    //     "*.jsonc": "json comments",
+    // },
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "*.theme.json"
+            ],
+            "url": "https://raw.githubusercontent.com/tcd/dark-plus-power-bi/master/schema/power-bi-report-theme.schema.json"
+        }
+    ],
+}

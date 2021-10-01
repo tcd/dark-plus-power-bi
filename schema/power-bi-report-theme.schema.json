@@ -1,5 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/tcd/dark-plus-power-bi/master/schema/power-bi-report-theme.schema.json",
   "title": "Power BI Report Theme",
   "description": "JSON schema for Power BI Report Theme JSON files.",
   "type": "object",
@@ -8,7 +9,8 @@
   ],
   "properties": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "description": "theme name"
     },
     "dataColors": {
       "type": "array"
