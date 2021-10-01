@@ -14,9 +14,7 @@
     "build": {
       "patterns": [
         "src/json/theme.jsonc",
-        "src/json/schema/report-theme.schema.jsonc",
-        "theme.jsonc",
-        "report-theme.schema.jsonc"
+        "src/json/schema/schema.jsonc"
       ],
       "verbose": true,
       "runOnChangesOnly": true

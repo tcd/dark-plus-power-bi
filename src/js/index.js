@@ -8,7 +8,7 @@ const buildSchema = async () => {
     try {
         const rootDir = await pkgDir(__dirname)
 
-        const schemaInPath  = path.join(rootDir, "src", "json", "schema", "report-theme.schema.jsonc")
+        const schemaInPath  = path.join(rootDir, "src", "json", "schema", "schema.jsonc")
         const schemaOutPath = path.join(rootDir, "out", "report-theme.schema.json")
 
         const oldSchemaFileContent = await fs.readFile(schemaInPath, "utf8")
