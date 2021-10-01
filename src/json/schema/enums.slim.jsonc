@@ -1,15 +1,15 @@
 {
     "legend": {
-        "position": [
-            "Top",
-            "Bottom",
-            "Left",
-            "Right",
-            "TopCenter",
-            "BottomCenter",
-            "LeftCenter",
-            "RightCenter"
-        ],
+        // "position": [
+        //     "Top",
+        //     "Bottom",
+        //     "Left",
+        //     "Right",
+        //     "TopCenter",
+        //     "BottomCenter",
+        //     "LeftCenter",
+        //     "RightCenter"
+        // ],
         "legendMarkerRendering": [
             "markerOnly",
             "lineAndMarker",
@@ -103,11 +103,11 @@
         ]
     },
     "y1AxisReferenceLine": {
-        "style": [
-            "dashed",
-            "solid",
-            "dotted"
-        ],
+        // "style": [
+        //     "dashed",
+        //     "solid",
+        //     "dotted"
+        // ],
         "position": [
             "back",
             "front"
