@@ -1,0 +1,108 @@
+﻿{
+    "name": "Tidal",
+    "dataColors": [
+        "#094782",
+        "#0B72D7",
+        "#098BF5",
+        "#54B5FB",
+        "#71C0A7",
+        "#57B956",
+        "#478F48",
+        "#326633",
+        "#6B91B4",
+        "#6DAAE7",
+        "#6BB9F9",
+        "#98D3FD",
+        "#AAD9CA",
+        "#9AD59A",
+        "#91BC91",
+        "#84A385",
+        "#052441",
+        "#06396C",
+        "#05467B",
+        "#2A5B7E",
+        "#396054",
+        "#2C5D2B",
+        "#244824",
+        "#19331A",
+        "#475052",
+        "#6A9FB0",
+        "#BD7150",
+        "#7B4F71",
+        "#1B4D5C",
+        "#706060",
+        "#0F5C55",
+        "#1C2325"
+    ],
+    "tableAccent": "#094782",
+    "maximum": "#094782",
+    "center": "#326633",
+    "minimum": "#A8AAAD",
+    "visualStyles": {
+        "*": {
+            "*": {
+                "background": [
+                    {
+                        "show": true,
+                        "transparency": 3
+                    }
+                ],
+                "visualHeader": [
+                    {
+                        "foreground": {
+                            "solid": {
+                                "color": "#094782"
+                            }
+                        },
+                        "transparency": 3
+                    }
+                ]
+            }
+        },
+        "group": {
+            "*": {
+                "background": [
+                    {
+                        "show": false
+                    }
+                ]
+            }
+        },
+        "basicShape": {
+            "*": {
+                "background": [
+                    {
+                        "show": false
+                    }
+                ]
+            }
+        },
+        "image": {
+            "*": {
+                "background": [
+                    {
+                        "show": false
+                    }
+                ]
+            }
+        },
+        "page": {
+            "*": {
+                "background": [
+                    {
+                        "transparency": 100
+                    }
+                ],
+                "outspace": [
+                    {
+                        "image": {
+                            "name": "Wave",
+                            "scaling": "Fit",
+                            "url": "data:image/png;base64,..."
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

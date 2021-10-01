@@ -45,6 +45,7 @@
           },
         },
         "categoryAxis": {
+          "title": "X-Axis",
           "type": "object",
           "properties": {
             "show": {
@@ -420,222 +421,247 @@
           },
         },
         "trend": {
-          "show": {
-            "type": "boolean",
-            "title": "Show"
-          },
-          "title": {
-            "type": "text",
-            "title": "Name",
-            "description": "Set trend line name"
-          },
-          "lineColor": {
-            "type": "fill",
-            "title": "Color",
-            "description": "Set trend line color"
-          },
-          "transparency": {
-            "type": "number",
-            "title": "Transparency",
-            "description": "Set transparency for trend line color"
-          },
-          "style": {
-            "type": "enum",
-            "title": "Style",
-            "description": "Set trend line style"
-          },
-          "combineSeries": {
-            "type": "boolean",
-            "title": "Combine Series",
-            "description": "Show one trend line per series or combine"
+          "type": "object",
+          "properties": {
+            "show": {
+              "type": "boolean",
+              "title": "Show"
+            },
+            "title": {
+              "type": "text",
+              "title": "Name",
+              "description": "Set trend line name"
+            },
+            "lineColor": {
+              "type": "fill",
+              "title": "Color",
+              "description": "Set trend line color"
+            },
+            "transparency": {
+              "type": "number",
+              "title": "Transparency",
+              "description": "Set transparency for trend line color"
+            },
+            "style": {
+              "type": "enum",
+              "title": "Style",
+              "description": "Set trend line style"
+            },
+            "combineSeries": {
+              "type": "boolean",
+              "title": "Combine Series",
+              "description": "Show one trend line per series or combine"
+            },
           },
         },
         "y1AxisReferenceLine": {
-          "show": {
-            "type": "boolean",
-            "title": "Show"
-          },
-          "value": {
-            "type": "number",
-            "title": "Value",
-            "description": "Set reference line numeric value"
-          },
-          "lineColor": {
-            "type": "fill",
-            "title": "Color",
-            "description": "Set reference line color"
-          },
-          "transparency": {
-            "type": "number",
-            "title": "Transparency",
-            "description": "Set transparency for reference line color"
-          },
-          "style": {
-            "type": "enum",
-            "title": "Line style"
-          },
-          "position": {
-            "type": "enum",
-            "title": "Position",
-            "description": "Arrange relative to chart data points"
-          },
-          "dataLabelShow": {
-            "type": "boolean",
-            "title": "Data label",
-            "description": "Display a data label for the reference line"
-          },
-          "dataLabelColor": {
-            "type": "fill",
-            "title": "Color",
-            "description": "Set the reference line data label color"
-          },
-          "dataLabelDecimalPoints": {
-            "type": "number",
-            "title": "Decimal Places"
-          },
-          "dataLabelHorizontalPosition": {
-            "type": "enum",
-            "title": "Horizontal Position",
-            "description": "Set the horizontal position for the reference line data label"
-          },
-          "dataLabelVerticalPosition": {
-            "type": "enum",
-            "title": "Vertical Position",
-            "description": "Set the vertical position for the reference line data label"
-          },
-          "dataLabelDisplayUnits": {
-            "type": "formatting",
-            "title": "Display units",
-            "description": "Select the units (millions, billions, etc.)"
+          "type": "object",
+          "properties": {
+            "show": {
+              "type": "boolean",
+              "title": "Show"
+            },
+            "value": {
+              "type": "number",
+              "title": "Value",
+              "description": "Set reference line numeric value"
+            },
+            "lineColor": {
+              "type": "fill",
+              "title": "Color",
+              "description": "Set reference line color"
+            },
+            "transparency": {
+              "type": "number",
+              "title": "Transparency",
+              "description": "Set transparency for reference line color"
+            },
+            "style": {
+              "type": "enum",
+              "title": "Line style"
+            },
+            "position": {
+              "type": "enum",
+              "title": "Position",
+              "description": "Arrange relative to chart data points"
+            },
+            "dataLabelShow": {
+              "type": "boolean",
+              "title": "Data label",
+              "description": "Display a data label for the reference line"
+            },
+            "dataLabelColor": {
+              "type": "fill",
+              "title": "Color",
+              "description": "Set the reference line data label color"
+            },
+            "dataLabelDecimalPoints": {
+              "type": "number",
+              "title": "Decimal Places"
+            },
+            "dataLabelHorizontalPosition": {
+              "type": "enum",
+              "title": "Horizontal Position",
+              "description": "Set the horizontal position for the reference line data label"
+            },
+            "dataLabelVerticalPosition": {
+              "type": "enum",
+              "title": "Vertical Position",
+              "description": "Set the vertical position for the reference line data label"
+            },
+            "dataLabelDisplayUnits": {
+              "type": "formatting",
+              "title": "Display units",
+              "description": "Select the units (millions, billions, etc.)"
+            },
           },
         },
         "referenceLine": {
-          "show": {
-            "type": "boolean",
-            "title": "Show"
-          },
-          "title": {
-            "type": "text",
-            "title": "Name",
-            "description": "Set reference line name"
-          },
-          "value": {
-            "type": "number",
-            "title": "Value",
-            "description": "Set reference line numeric value"
-          },
-          "lineColor": {
-            "type": "fill",
-            "title": "Color",
-            "description": "Set reference line color"
-          },
-          "transparency": {
-            "type": "number",
-            "title": "Transparency",
-            "description": "Set transparency for reference line color"
-          },
-          "style": {
-            "type": "enum",
-            "title": "Line style"
-          },
-          "position": {
-            "type": "enum",
-            "title": "Position",
-            "description": "Arrange relative to chart data points"
-          },
-          "dataLabelShow": {
-            "type": "boolean",
-            "title": "Data label",
-            "description": "Display a data label for the reference line"
-          },
-          "dataLabelColor": {
-            "type": "fill",
-            "title": "Color",
-            "description": "Set the reference line data label color"
-          },
-          "dataLabelDecimalPoints": {
-            "type": "number",
-            "title": "Decimal Places"
-          },
-          "dataLabelHorizontalPosition": {
-            "type": "enum",
-            "title": "Horizontal Position",
-            "description": "Set the horizontal position for the reference line data label"
-          },
-          "dataLabelVerticalPosition": {
-            "type": "enum",
-            "title": "Vertical Position",
-            "description": "Set the vertical position for the reference line data label"
-          },
-          "dataLabelDisplayUnits": {
-            "type": "formatting",
-            "title": "Display units",
-            "description": "Select the units (millions, billions, etc.)"
+          "title": "Constant Line",
+          "type": "object",
+          "properties": {
+            "show": {
+              "type": "boolean",
+              "title": "Show"
+            },
+            "title": {
+              "type": "text",
+              "title": "Name",
+              "description": "Set reference line name"
+            },
+            "value": {
+              "type": "number",
+              "title": "Value",
+              "description": "Set reference line numeric value"
+            },
+            "lineColor": {
+              "type": "fill",
+              "title": "Color",
+              "description": "Set reference line color"
+            },
+            "transparency": {
+              "type": "number",
+              "title": "Transparency",
+              "description": "Set transparency for reference line color"
+            },
+            "style": {
+              "type": "enum",
+              "title": "Line style"
+            },
+            "position": {
+              "type": "enum",
+              "title": "Position",
+              "description": "Arrange relative to chart data points"
+            },
+            "dataLabelShow": {
+              "type": "boolean",
+              "title": "Data label",
+              "description": "Display a data label for the reference line"
+            },
+            "dataLabelColor": {
+              "type": "fill",
+              "title": "Color",
+              "description": "Set the reference line data label color"
+            },
+            "dataLabelDecimalPoints": {
+              "type": "number",
+              "title": "Decimal Places"
+            },
+            "dataLabelHorizontalPosition": {
+              "type": "enum",
+              "title": "Horizontal Position",
+              "description": "Set the horizontal position for the reference line data label"
+            },
+            "dataLabelVerticalPosition": {
+              "type": "enum",
+              "title": "Vertical Position",
+              "description": "Set the vertical position for the reference line data label"
+            },
+            "dataLabelDisplayUnits": {
+              "type": "formatting",
+              "title": "Display units",
+              "description": "Select the units (millions, billions, etc.)"
+            },
           },
         },
         "line": {
-          "lineColor": {
-            "type": "fill",
-            "title": "Line color"
-          },
-          "transparency": {
-            "type": "number",
-            "title": "Transparency",
-            "description": "Set transparency for background color"
-          },
-          "weight": {
-            "type": "number",
-            "title": "Weight"
-          },
-          "roundEdge": {
-            "type": "number",
-            "title": "Round edges"
+          "type": "object",
+          "properties": {
+            "lineColor": {
+              "type": "fill",
+              "title": "Line color"
+            },
+            "transparency": {
+              "type": "number",
+              "title": "Transparency",
+              "description": "Set transparency for background color"
+            },
+            "weight": {
+              "type": "number",
+              "title": "Weight"
+            },
+            "roundEdge": {
+              "type": "number",
+              "title": "Round edges"
+            },
           },
         },
         "fill": {
-          "show": {
-            "type": "boolean",
-            "title": "Show"
-          },
-          "fillColor": {
-            "type": "fill",
-            "title": "Fill color"
-          },
-          "transparency": {
-            "type": "number",
-            "title": "Transparency",
-            "description": "Set transparency for background color"
+          "type": "object",
+          "properties": {
+            "show": {
+              "type": "boolean",
+              "title": "Show"
+            },
+            "fillColor": {
+              "type": "fill",
+              "title": "Fill color"
+            },
+            "transparency": {
+              "type": "number",
+              "title": "Transparency",
+              "description": "Set transparency for background color"
+            },
           },
         },
         "rotation": {
-          "angle": {
-            "type": "number",
-            "title": "Rotation"
+          "type": "object",
+          "properties": {
+            "angle": {
+              "type": "number",
+              "title": "Rotation"
+            },
           },
         },
         "categoryLabels": {
-          "show": {
-            "type": "boolean",
-            "title": "Show"
-          },
-          "color": {
-            "type": "fill",
-            "title": "Color",
-            "description": "Select color for data labels"
-          },
-          "fontSize": {
-            "type": "formatting",
-            "title": "Text Size"
-          },
-          "fontFamily": {
-            "type": "formatting",
-            "title": "Font family"
+          "type": "object",
+          "properties": {
+            "show": {
+              "type": "boolean",
+              "title": "Show"
+            },
+            "color": {
+              "type": "fill",
+              "title": "Color",
+              "description": "Select color for data labels"
+            },
+            "fontSize": {
+              "type": "formatting",
+              "title": "Text Size"
+            },
+            "fontFamily": {
+              "type": "formatting",
+              "title": "Font family"
+            },
           },
         },
         "wordWrap": {
-          "show": {
-            "type": "boolean",
-            "title": "Show"
+          "type": "object",
+          "properties": {
+            "show": {
+              "type": "boolean",
+              "title": "Show"
+            },
           },
         },
         "dataLabels": {
@@ -717,6 +743,7 @@
           },
         },
         "percentBarLabel": {
+          "title": "Conversion Rate Label",
           "type": "object",
           "properties": {
             "show": {
@@ -739,6 +766,7 @@
           },
         },
         "axis": {
+          "title": "Gauge Axis",
           "type": "object",
           "properties": {
             "min": {
@@ -997,6 +1025,7 @@
           },
         },
         "plotAreaShading": {
+          "title": "Symmetry Shading",
           "type": "object",
           "properties": {
             "show": {
@@ -1238,6 +1267,7 @@
           },
         },
         "columnFormatting": {
+          "title": "Field formatting",
           "type": "object",
           "properties": {
             "fontColor": {
@@ -1423,6 +1453,7 @@
           },
         },
         "numericInputStyle": {
+          "title": "Numeric Inputs",
           "type": "object",
           "properties": {
             "fontColor": {

@@ -1,13 +1,65 @@
 Primary class	Secondary classes	JSON class name	Default settings	Associated visual objects
-Callout	N/A	callout	DIN  #252423  45pt	Card data labels  KPI indicators
-Header	N/A	header	Segoe UI Semibold  #252423  12pt	Key influencers headers
-Title		title	DIN  #252423  12pt	Category axis title  Value axis title  Multi-row card title *  Slicer header
+Callout	N/A	callout	DIN, #252423, 45pt	Card data labels  KPI indicators
+Header	N/A	header	Segoe UI Semibold, #252423, 12pt	Key influencers headers
+Title		title	DIN, #252423, 12pt	Category axis title  Value axis title  Multi-row card title *  Slicer header
 -	Large title	largeTitle	14pt	Visual title
-Label		label	Segoe UI #252423 10pt	Table and matrix column headers  Matrix row headers Table and matrix grid Table and matrix values
+Label		label	Segoe UI, #252423, 10pt	Table and matrix column headers  Matrix row headers Table and matrix grid Table and matrix values
 -	Semibold	semiboldLabel	Segoe UI Semibold	Key influencers profile text
 -	Large	largeLabel	12pt	Multi-row card data labels
 -	Small	smallLabel	9pt	Reference line labels *  Slicer date range labels Slicer numeric input text style Slicer search box Key influencers influencer text
 -	Light	lightLabel	#605E5C	Legend text Button text Category Axis labels Funnel chart data labels Funnel chart conversion rate labels Gauge target Scatter chart category label Slicer items
 -	Bold	boldLabel	Segoe UI Bold	Matrix subtotals Matrix grand totals Table totals
--	Large and Light	largeLightLabel	#605E5C 12pt	Card category labels Gauge labels Multi-row card category labels
--	Small and Light	smallLightLabel	#605E5C 9pt	Data labels Value axis labels
+-	Large and Light	largeLightLabel	#605E5C, 12pt	Card category labels Gauge labels Multi-row card category labels
+-	Small and Light	smallLightLabel	#605E5C, 9pt	Data labels Value axis labels
+
+"callout",
+"header",
+"title",
+"largeTitle",
+"label",
+"semiboldLabel",
+"largeLabel",
+"smallLabel",
+"lightLabel",
+"oldLabel",
+"largeLightLabel",
+"smallLightLabel",
+
+callout	DIN, #252423, 45pt	Card data labels  KPI indicators
+header	Segoe UI Semibold, #252423, 12pt	Key influencers headers
+title	DIN, #252423, 12pt	Category axis title  Value axis title  Multi-row card title *  Slicer header
+largeTitle	14pt	Visual title
+label	Segoe UI, #252423, 10pt	Table and matrix column headers  Matrix row headers Table and matrix grid Table and matrix values
+semiboldLabel	Segoe UI Semibold	Key influencers profile text
+largeLabel	12pt	Multi-row card data labels
+smallLabel	9pt	Reference line labels *  Slicer date range labels Slicer numeric input text style Slicer search box Key influencers influencer text
+lightLabel	#605E5C	Legend text Button text Category Axis labels Funnel chart data labels Funnel chart conversion rate labels Gauge target Scatter chart category label Slicer items
+boldLabel	Segoe UI Bold	Matrix subtotals Matrix grand totals Table totals
+largeLightLabel	#605E5C, 12pt	Card category labels Gauge labels Multi-row card category labels
+smallLightLabel	#605E5C, 9pt	Data labels Value axis labels
+
+{ "fontFace": "DIN",               "color": "#252423", "fontSize": 45 },
+{ "fontFace": "Segoe UI Semibold", "color": "#252423", "fontSize": 12 },
+{ "fontFace": "DIN",               "color": "#252423", "fontSize": 12 },
+{ "fontSize": 14 },
+{ "fontFace": "Segoe UI", "color": "#252423", "fontSize": 10 },
+{ "fontFace": "Segoe UI Semibold" },
+{ "fontSize": 12 },
+{ "fontSize": 9  },
+{ "color": "#605E5C" },
+{ "fontFace": "Segoe UI Bold" },
+{ "color": "#605E5C", "fontSize": 12 },
+{ "color": "#605E5C", "fontSize": 9  },
+
+"callout":          { "description": "Associated visual objects:\n- Card data labels\n-KPI indicators" },
+"header":           { "description": "Associated visual objects:\n- Key influencers headers" },
+"title":            { "description": "Associated visual objects:\n- Category axis title\n- Value axis title\n- Multi-row card title\n- Slicer header" },
+"largeTitle":       { "description": "Associated visual objects:\n- Visual title" },
+"label":            { "description": "Associated visual objects:\n- Table and matrix column headers\n- Matrix row headers\n- Table and matrix grid\n- Table and matrix values" },
+"semiboldLabel":    { "description": "Associated visual objects:\n- Key influencers profile text" },
+"largeLabel":       { "description": "Associated visual objects:\n- Multi-row card data labels" },
+"smallLabel":       { "description": "Associated visual objects:\n- Reference line labels\n- Slicer date range labels\n- Slicer numeric input text style\n- Slicer search box\n- Key influencers influencer text" },
+"lightLabel":       { "description": "Associated visual objects:\n- Legend text\n- Button text\n- Category Axis labels\n- Funnel chart data labels\n- Funnel chart conversion rate labels\n- Gauge target\n- Scatter chart category label\n- Slicer items" },
+"oldLabel":         { "description": "Associated visual objects:\n- Matrix subtotals\n- Matrix grand totals\n- Table totals" },
+"largeLightLabel":  { "description": "Associated visual objects:\n- Card category labels\n- Gauge labels\n- Multi-row card category labels" },
+"smallLightLabel":  { "description": "Associated visual objects:\n- Data labels\n- Value axis labels" },
