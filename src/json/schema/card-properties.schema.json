@@ -71,7 +71,7 @@
                         "start": {
                             "type": "number/datetime",
                             "title": "Start",
-                            "description": "Enter a starting value (optional)"
+                            "description": "Enter a starting value ((optional)"
                         },
                         "end": {
                             "type": "number/datetime",
