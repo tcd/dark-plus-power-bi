@@ -44,11 +44,11 @@
                             "title": "Color"
                         },
                         "fontFamily": {
-                            "type": "formatting",
+                            "type": "string",
                             "title": "Font family"
                         },
                         "fontSize": {
-                            "type": "formatting",
+                            "type": "number",
                             "title": "Text Size"
                         }
                     }
@@ -109,11 +109,11 @@
                             "title": "Color"
                         },
                         "fontFamily": {
-                            "type": "formatting",
+                            "type": "string",
                             "title": "Font family"
                         },
                         "fontSize": {
-                            "type": "formatting",
+                            "type": "number",
                             "title": "Text Size"
                         },
                         "labelDisplayUnits": {
@@ -140,11 +140,11 @@
                             "title": "Title color"
                         },
                         "titleFontFamily": {
-                            "type": "formatting",
+                            "type": "string",
                             "title": "Font family"
                         },
                         "titleFontSize": {
-                            "type": "formatting",
+                            "type": "number",
                             "title": "Title text size"
                         },
                         "position": {
@@ -221,11 +221,11 @@
                             "title": "Color"
                         },
                         "fontFamily": {
-                            "type": "formatting",
+                            "type": "string",
                             "title": "Font family"
                         },
                         "fontSize": {
-                            "type": "formatting",
+                            "type": "number",
                             "title": "Text Size"
                         },
                         "labelDisplayUnits": {
@@ -243,11 +243,11 @@
                             "title": "Title color"
                         },
                         "titleFontFamily": {
-                            "type": "formatting",
+                            "type": "string",
                             "title": "Font family"
                         },
                         "titleFontSize": {
-                            "type": "formatting",
+                            "type": "number",
                             "title": "Title text size"
                         },
                         "axisLabel": {
@@ -310,11 +310,11 @@
                             "title": "Color"
                         },
                         "secFontFamily": {
-                            "type": "formatting",
+                            "type": "string",
                             "title": "Font family"
                         },
                         "secFontSize": {
-                            "type": "formatting",
+                            "type": "number",
                             "title": "Text Size"
                         },
                         "secLabelDisplayUnits": {
@@ -332,11 +332,11 @@
                             "title": "Title color"
                         },
                         "secTitleFontFamily": {
-                            "type": "formatting",
+                            "type": "string",
                             "title": "Font family"
                         },
                         "secTitleFontSize": {
-                            "type": "formatting",
+                            "type": "number",
                             "title": "Title text size"
                         }
                     }
@@ -393,11 +393,11 @@
                             "title": "Customize series"
                         },
                         "fontSize": {
-                            "type": "formatting",
+                            "type": "number",
                             "title": "Text Size"
                         },
                         "fontFamily": {
-                            "type": "formatting",
+                            "type": "string",
                             "title": "Font family"
                         },
                         "labelDensity": {
@@ -516,7 +516,7 @@
                             "title": "Show"
                         },
                         "title": {
-                            "type": "text",
+                            "type": "string",
                             "title": "Name",
                             "description": "Set trend line name"
                         },
@@ -630,7 +630,7 @@
                             "title": "Show"
                         },
                         "title": {
-                            "type": "text",
+                            "type": "string",
                             "title": "Name",
                             "description": "Set reference line name"
                         },
@@ -764,11 +764,11 @@
                             "description": "Select color for data labels"
                         },
                         "fontSize": {
-                            "type": "formatting",
+                            "type": "number",
                             "title": "Text Size"
                         },
                         "fontFamily": {
-                            "type": "formatting",
+                            "type": "string",
                             "title": "Font family"
                         }
                     }
@@ -791,11 +791,11 @@
                             "description": "Select color for data labels"
                         },
                         "fontSize": {
-                            "type": "formatting",
+                            "type": "number",
                             "title": "Text Size"
                         },
                         "fontFamily": {
-                            "type": "formatting",
+                            "type": "string",
                             "title": "Font family"
                         }
                     }
@@ -809,11 +809,11 @@
                             "description": "Select color for data labels"
                         },
                         "fontSize": {
-                            "type": "formatting",
+                            "type": "number",
                             "title": "Text Size"
                         },
                         "fontFamily": {
-                            "type": "formatting",
+                            "type": "string",
                             "title": "Font family"
                         }
                     }
@@ -883,11 +883,11 @@
                             "description": "Select color for data labels"
                         },
                         "fontSize": {
-                            "type": "formatting",
+                            "type": "number",
                             "title": "Text Size"
                         },
                         "fontFamily": {
-                            "type": "formatting",
+                            "type": "string",
                             "title": "Font family"
                         }
                     }
@@ -933,11 +933,11 @@
                             "description": "Select the number of decimal places to display for the values"
                         },
                         "fontSize": {
-                            "type": "formatting",
+                            "type": "number",
                             "title": "Text Size"
                         },
                         "fontFamily": {
-                            "type": "formatting",
+                            "type": "string",
                             "title": "Font family"
                         }
                     }
@@ -974,7 +974,7 @@
                             "title": "Show"
                         },
                         "title": {
-                            "type": "text",
+                            "type": "string",
                             "title": "Name",
                             "description": "Set forecast name"
                         },
@@ -1014,7 +1014,7 @@
                     "type": "object",
                     "properties": {
                         "bubbleSize": {
-                            "type": "formatting",
+                            "type": "number",
                             "title": "Size"
                         }
                     }
@@ -1322,11 +1322,11 @@
                             "title": "Word wrap"
                         },
                         "fontFamily": {
-                            "type": "formatting",
+                            "type": "string",
                             "title": "Font family"
                         },
                         "fontSize": {
-                            "type": "formatting",
+                            "type": "number",
                             "title": "Text Size"
                         },
                         "autoSizeColumnWidth": {
@@ -1386,11 +1386,11 @@
                             "description": "Show an icon instead of the full URL"
                         },
                         "fontFamily": {
-                            "type": "formatting",
+                            "type": "string",
                             "title": "Font family"
                         },
                         "fontSize": {
-                            "type": "formatting",
+                            "type": "number",
                             "title": "Text Size"
                         },
                         "wordWrap": {
@@ -1444,11 +1444,11 @@
                             "title": "Totals"
                         },
                         "fontFamily": {
-                            "type": "formatting",
+                            "type": "string",
                             "title": "Font family"
                         },
                         "fontSize": {
-                            "type": "formatting",
+                            "type": "number",
                             "title": "Text Size"
                         }
                     }
@@ -1516,11 +1516,11 @@
                             "title": "Word wrap"
                         },
                         "fontFamily": {
-                            "type": "formatting",
+                            "type": "string",
                             "title": "Font family"
                         },
                         "fontSize": {
-                            "type": "formatting",
+                            "type": "number",
                             "title": "Text Size"
                         },
                         "stepped": {
@@ -1567,11 +1567,11 @@
                             "description": "Background color of the cells"
                         },
                         "fontFamily": {
-                            "type": "formatting",
+                            "type": "string",
                             "title": "Font family"
                         },
                         "fontSize": {
-                            "type": "formatting",
+                            "type": "number",
                             "title": "Text Size"
                         },
                         "rowSubtotals": {
@@ -1635,7 +1635,7 @@
                             "title": "Text Size"
                         },
                         "fontFamily": {
-                            "type": "formatting",
+                            "type": "string",
                             "title": "Font family"
                         }
                     }
@@ -1670,7 +1670,7 @@
                             "title": "Text Size"
                         },
                         "fontFamily": {
-                            "type": "formatting",
+                            "type": "string",
                             "title": "Font family"
                         }
                     }
@@ -1689,7 +1689,7 @@
                             "title": "Text Size"
                         },
                         "fontFamily": {
-                            "type": "formatting",
+                            "type": "string",
                             "title": "Font family"
                         },
                         "background": {
