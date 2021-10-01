@@ -13,7 +13,11 @@
       "description": "theme name"
     },
     "dataColors": {
-      "type": "array"
+      "description": "The list of color hexadecimal codes to use to color shapes that represent data in Power BI Desktop visuals. This list can have as many or as few colors as you want. Once all colors from this list have been used, if the visual still needs more colors, it reverts back to using Power BI's default color palette.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   }
 }
