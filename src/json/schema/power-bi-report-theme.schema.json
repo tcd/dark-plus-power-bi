@@ -1,0 +1,42 @@
+{
+  "$id": "https://raw.githubusercontent.com/tcd/dark-plus-power-bi/master/schema/power-bi-report-theme.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Power BI Report Theme",
+  "description": "JSON schema for Power BI Report Theme JSON files.",
+  "type": "object",
+  "required": [ "name" ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the theme."
+    },
+    "dataColors": {
+      "description": "The list of color hexadecimal codes to use to color shapes that represent data in Power BI Desktop visuals.\nThis list can have as many or as few colors as you want.\nOnce all colors from this list have been used, if the visual still needs more colors, it reverts back to using Power BI's default color palette.",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "good":    { "type": "string", "description": "These properties set the status colors used by the waterfall chart and the KPI visual." },
+    "neutral": { "type": "string", "description": "These properties set the status colors used by the waterfall chart and the KPI visual." },
+    "bad":     { "type": "string", "description": "These properties set the status colors used by the waterfall chart and the KPI visual." },
+    "maximum": { "type": "string", "description": "These colors set the various gradient colors in the conditional formatting dialog box." },
+    "center":  { "type": "string", "description": "These colors set the various gradient colors in the conditional formatting dialog box." },
+    "minimum": { "type": "string", "description": "These colors set the various gradient colors in the conditional formatting dialog box." },
+    "null":    { "type": "string", "description": "These colors set the various gradient colors in the conditional formatting dialog box." }
+  },
+  "definitions": {
+    "color": { 
+      "type": "string",
+      "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6}$"
+    },
+    "color-properties-1": { 
+      "type": "string",
+      "description": "These properties set the status colors used by the waterfall chart and the KPI visual.",
+      "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6}$"
+    },
+    "color-properties-2": { 
+      "type": "string",
+      "description": "These colors set the various gradient colors in the conditional formatting dialog box.",
+      "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6}$"
+    }
+  }
+}
