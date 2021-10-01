@@ -69,14 +69,20 @@
                             "title": "Scale type"
                         },
                         "start": {
-                            "type": "number/datetime",
+                            "type": [
+                                "number",
+                                "string"
+                            ],
                             "title": "Start",
-                            "description": "Enter a starting value ((optional)"
+                            "description": "Enter a starting value (either a number or a datetime) (optional)"
                         },
                         "end": {
-                            "type": "number/datetime",
+                            "type": [
+                                "number",
+                                "string"
+                            ],
                             "title": "End",
-                            "description": "Enter an ending value (optional)"
+                            "description": "Enter an ending value (either a number or a datetime) (optional)"
                         },
                         "axisType": {
                             "enum": [
@@ -182,14 +188,20 @@
                             "title": "Scale type"
                         },
                         "start": {
-                            "type": "number/datetime",
+                            "type": [
+                                "number",
+                                "string"
+                            ],
                             "title": "Start",
-                            "description": "Enter a starting value (optional)"
+                            "description": "Enter a starting value (either a number or a datetime) (optional)"
                         },
                         "end": {
-                            "type": "number/datetime",
+                            "type": [
+                                "number",
+                                "string"
+                            ],
                             "title": "End",
-                            "description": "Enter an ending value (optional)"
+                            "description": "Enter an ending value (either a number or a datetime) (optional)"
                         },
                         "showAxisTitle": {
                             "type": "boolean",
