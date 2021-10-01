@@ -20,48 +20,39 @@
             }
         },
         "good": {
-            "type": "string",
-            "description": "These properties set the status colors used by the waterfall chart and the KPI visual."
+            "$ref": "#/definitions/color-properties-1"
         },
         "neutral": {
-            "type": "string",
-            "description": "These properties set the status colors used by the waterfall chart and the KPI visual."
+            "$ref": "#/definitions/color-properties-1"
         },
         "bad": {
-            "type": "string",
-            "description": "These properties set the status colors used by the waterfall chart and the KPI visual."
+            "$ref": "#/definitions/color-properties-1"
         },
         "maximum": {
-            "type": "string",
-            "description": "These colors set the various gradient colors in the conditional formatting dialog box."
+            "$ref": "#/definitions/color-properties-2"
         },
         "center": {
-            "type": "string",
-            "description": "These colors set the various gradient colors in the conditional formatting dialog box."
+            "$ref": "#/definitions/color-properties-2"
         },
         "minimum": {
-            "type": "string",
-            "description": "These colors set the various gradient colors in the conditional formatting dialog box."
+            "$ref": "#/definitions/color-properties-2"
         },
         "null": {
-            "type": "string",
-            "description": "These colors set the various gradient colors in the conditional formatting dialog box."
+            "$ref": "#/definitions/color-properties-2"
         }
     },
     "definitions": {
-        "color": {
+        "hex-color": {
             "type": "string",
-            "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6}$"
+            "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
         },
         "color-properties-1": {
-            "type": "string",
             "description": "These properties set the status colors used by the waterfall chart and the KPI visual.",
-            "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6}$"
+            "$ref": "#/definitions/hex-color"
         },
         "color-properties-2": {
-            "type": "string",
             "description": "These colors set the various gradient colors in the conditional formatting dialog box.",
-            "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6}$"
+            "$ref": "#/definitions/hex-color"
         }
     }
 }

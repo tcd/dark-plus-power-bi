@@ -8,6 +8,7 @@
             "fileMatch": [
                 "*.theme.json",
                 "theme.jsonc",
+                "out/dark-plus-report-theme.json"
             ],
             // "url": "https://raw.githubusercontent.com/tcd/dark-plus-power-bi/master/schema/power-bi-report-theme.schema.json",
             // "url": "./src/json/schema/power-bi-report-theme.schema.json",

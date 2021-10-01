@@ -20,6 +20,10 @@
     "center": "#DCDCAA",
     "minimum": "#D16969",
     "hyperlink": "#2878BD",
+    "bad": "#D16969",
+    "neutral": "#DCDCAA",
+    "good": "#608B4E",
+    "null": "#808080",
     "visitedHyperlink": "#D0E4F5",
     "textClasses": {
         "callout": {
@@ -257,9 +261,6 @@
             }
         }
     },
-    "bad": "#D16969",
-    "neutral": "#DCDCAA",
-    "good": "#608B4E",
     "icons": {
         "RedUpArrow": {
             "description": "Red Up Arrow",
