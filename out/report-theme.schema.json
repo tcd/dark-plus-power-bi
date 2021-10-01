@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/tcd/dark-plus-power-bi/master/schema/power-bi-report-theme.schema.json",
+  "$id": "https://raw.githubusercontent.com/tcd/dark-plus-power-bi/master/out/report-theme.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Power BI Report Theme",
   "description": "JSON schema for Power BI Report Theme JSON files.",
@@ -21,7 +21,7 @@
     },
     "good": {
       "type": "string",
-      "description": "These properties set the status colors used by the waterfall chart and the KPI visual."
+      "description": "lololo"
     },
     "neutral": {
       "type": "string",
