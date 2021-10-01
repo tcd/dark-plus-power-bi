@@ -64,7 +64,10 @@
     // Visual Styles
     // =========================================================================
     "visualStyles": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+
+      },
     },
   },
   "definitions": {

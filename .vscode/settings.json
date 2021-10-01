@@ -7,13 +7,13 @@
         {
             "fileMatch": [
                 "*.theme.json",
-                "theme.json5",
+                "theme.jsonc",
                 "out/dark-plus-report-theme.json"
             ],
             // "url": "https://raw.githubusercontent.com/tcd/dark-plus-power-bi/master/schema/power-bi-report-theme.schema.json",
             // "url": "./src/json/schema/power-bi-report-theme.schema.json",
             "url": "./out/report-theme.schema.json",
-        }
+        },
     ],
     "colorize.languages": [
         "javascript",
@@ -21,6 +21,6 @@
         "jsonc",
     ],
     "colorize.colorized_variables": [
-        "LESS"
-    ]
+        "LESS",
+    ],
 }

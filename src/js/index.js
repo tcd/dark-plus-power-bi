@@ -26,14 +26,14 @@ const convertJson = async (inPath, outPath) => {
 
 const buildSchema = async () => {
     const rootDir = await pkgDir(__dirname)
-    const inPath  = path.join(rootDir, "src", "json", "schema", "schema.json5")
+    const inPath  = path.join(rootDir, "src", "json", "schema", "schema.jsonc")
     const outPath = path.join(rootDir, "out", "report-theme.schema.json")
     await convertJson(inPath, outPath)
 }
 
 const buildTheme = async () => {
     const rootDir = await pkgDir(__dirname)
-    const inPath  = path.join(rootDir, "src", "json", "theme.json5")
+    const inPath  = path.join(rootDir, "src", "json", "theme.jsonc")
     const outPath = path.join(rootDir, "out", "dark-plus-report-theme.json")
     await convertJson(inPath, outPath)
 }

@@ -10,8 +10,8 @@
   "watch": {
     "build": {
       "patterns": [
-        "src/json/theme.json5",
-        "src/json/schema/schema.json5"
+        "src/json/theme.jsonc",
+        "src/json/schema/schema.jsonc"
       ],
       "verbose": true,
       "runOnChangesOnly": true
