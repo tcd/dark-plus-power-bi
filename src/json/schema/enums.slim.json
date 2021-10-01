@@ -1,0 +1,380 @@
+{
+    "legend": {
+        "position": [
+            "Top",
+            "Bottom",
+            "Left",
+            "Right",
+            "TopCenter",
+            "BottomCenter",
+            "LeftCenter",
+            "RightCenter"
+        ],
+        "legendMarkerRendering": [
+            "markerOnly",
+            "lineAndMarker",
+            "lineOnly"
+        ]
+    },
+    "categoryAxis": {
+        "axisScale": [
+            "linear",
+            "log"
+        ],
+        "axisType": [
+            "Scalar",
+            "Categorical"
+        ],
+        "axisStyle": [
+            "showTitleOnly",
+            "showUnitOnly",
+            "showBoth"
+        ],
+        "gridlineStyle": [
+            "dashed",
+            "solid",
+            "dotted"
+        ],
+        "position": [
+            "Left",
+            "Right"
+        ]
+    },
+    "valueAxis": {
+        "position": [
+            "Left",
+            "Right"
+        ],
+        "axisScale": [
+            "linear",
+            "log"
+        ],
+        "axisStyle": [
+            "showTitleOnly",
+            "showUnitOnly",
+            "showBoth"
+        ],
+        "gridlineStyle": [
+            "dashed",
+            "solid",
+            "dotted"
+        ],
+        "secPosition": [
+            "Left",
+            "Right"
+        ],
+        "secAxisScale": [
+            "linear",
+            "log"
+        ],
+        "secAxisStyle": [
+            "showTitleOnly",
+            "showUnitOnly",
+            "showBoth"
+        ]
+    },
+    "lineStyles": {
+        "strokeLineJoin": [
+            "miter",
+            "round",
+            "bevel"
+        ],
+        "lineStyle": [
+            "dashed",
+            "solid",
+            "dotted"
+        ],
+        "markerShape": [
+            "circle",
+            "square",
+            "diamond",
+            "triangle",
+            "x",
+            "shortDash",
+            "longDash",
+            "plus"
+        ]
+    },
+    "trend": {
+        "style": [
+            "dashed",
+            "solid",
+            "dotted"
+        ]
+    },
+    "y1AxisReferenceLine": {
+        "style": [
+            "dashed",
+            "solid",
+            "dotted"
+        ],
+        "position": [
+            "back",
+            "front"
+        ],
+        "dataLabelText": [
+            "Value",
+            "Name",
+            "ValueAndName"
+        ],
+        "dataLabelHorizontalPosition": [
+            "left",
+            "right"
+        ],
+        "dataLabelVerticalPosition": [
+            "above",
+            "under"
+        ]
+    },
+    "referenceLine": {
+        "style": [
+            "dashed",
+            "solid",
+            "dotted"
+        ],
+        "position": [
+            "back",
+            "front"
+        ],
+        "dataLabelText": [
+            "Value",
+            "Name",
+            "ValueAndName"
+        ],
+        "dataLabelHorizontalPosition": [
+            "left",
+            "right"
+        ],
+        "dataLabelVerticalPosition": [
+            "above",
+            "under"
+        ]
+    },
+    "labels": {
+        "labelOrientation": [
+            "vertical",
+            "horizontal"
+        ],
+        "labelPosition": [
+            "Auto",
+            "InsideEnd",
+            "OutsideEnd",
+            "InsideCenter",
+            "InsideBase"
+        ],
+        "labelStyle": [
+            "Category",
+            "Data",
+            "Percent of total",
+            "Both",
+            "Category, percent of total",
+            "Data value, percent of total",
+            "Category, data value, percent of total"
+        ]
+    },
+    "card": {
+        "outline": [
+            "None",
+            "BottomOnly",
+            "TopOnly",
+            "LeftOnly",
+            "RightOnly",
+            "TopBottom",
+            "LeftRight",
+            "Frame"
+        ]
+    },
+    "imageScaling": {
+        "imageScalingType": [
+            "Normal",
+            "Fit",
+            "Fill"
+        ]
+    },
+    "forecast": {
+        "confidenceBandStyle": [
+            "fill",
+            "line",
+            "none"
+        ],
+        "style": [
+            "dashed",
+            "solid",
+            "dotted"
+        ]
+    },
+    "mapStyles": {
+        "mapTheme": [
+            "aerial",
+            "canvasDark",
+            "canvasLight",
+            "grayscale",
+            "road"
+        ]
+    },
+    "shape": {
+        "projectionEnum": [
+            "albersUsa",
+            "equirectangular",
+            "mercator",
+            "orthographic"
+        ]
+    },
+    "xAxisReferenceLine": {
+        "style": [
+            "dashed",
+            "solid",
+            "dotted"
+        ],
+        "position": [
+            "back",
+            "front"
+        ],
+        "dataLabelText": [
+            "Value",
+            "Name",
+            "ValueAndName"
+        ],
+        "dataLabelHorizontalPosition": [
+            "left",
+            "right"
+        ],
+        "dataLabelVerticalPosition": [
+            "above",
+            "under"
+        ]
+    },
+    "ratioLine": {
+        "style": [
+            "dashed",
+            "solid",
+            "dotted"
+        ]
+    },
+    "columnHeaders": {
+        "outline": [
+            "None",
+            "BottomOnly",
+            "TopOnly",
+            "LeftOnly",
+            "RightOnly",
+            "TopBottom",
+            "LeftRight",
+            "Frame"
+        ]
+    },
+    "values": {
+        "outline": [
+            "None",
+            "BottomOnly",
+            "TopOnly",
+            "LeftOnly",
+            "RightOnly",
+            "TopBottom",
+            "LeftRight",
+            "Frame"
+        ]
+    },
+    "total": {
+        "outline": [
+            "None",
+            "BottomOnly",
+            "TopOnly",
+            "LeftOnly",
+            "RightOnly",
+            "TopBottom",
+            "LeftRight",
+            "Frame"
+        ]
+    },
+    "rowHeaders": {
+        "outline": [
+            "None",
+            "BottomOnly",
+            "TopOnly",
+            "LeftOnly",
+            "RightOnly",
+            "TopBottom",
+            "LeftRight",
+            "Frame"
+        ]
+    },
+    "subTotals": {
+        "outline": [
+            "None",
+            "BottomOnly",
+            "TopOnly",
+            "LeftOnly",
+            "RightOnly",
+            "TopBottom",
+            "LeftRight",
+            "Frame"
+        ],
+        "rowSubtotalsPosition": [
+            "Top",
+            "Bottom"
+        ]
+    },
+    "general": {
+        "orientation": [
+            "vertical",
+            "horizontal"
+        ]
+    },
+    "data": {
+        "relativeRange": [
+            "Last",
+            "Next",
+            "This"
+        ],
+        "relativePeriod": [
+            "None",
+            "Days",
+            "Weeks",
+            "Calendar Weeks",
+            "Months",
+            "Calendar Months",
+            "Years",
+            "Calendar Years"
+        ],
+        "mode": [
+            "Between",
+            "Before",
+            "After",
+            "Basic",
+            "Dropdown",
+            "Relative",
+            "Single"
+        ]
+    },
+    "header": {
+        "outline": [
+            "None",
+            "BottomOnly",
+            "TopOnly",
+            "LeftOnly",
+            "RightOnly",
+            "TopBottom",
+            "LeftRight",
+            "Frame"
+        ]
+    },
+    "items": {
+        "outline": [
+            "None",
+            "BottomOnly",
+            "TopOnly",
+            "LeftOnly",
+            "RightOnly",
+            "TopBottom",
+            "LeftRight",
+            "Frame"
+        ]
+    },
+    "status": {
+        "direction": [
+            "Positive",
+            "Negative"
+        ]
+    }
+}
