@@ -11,18 +11,33 @@
   },
   "main": "./src/js/index.js",
   "watch": {
-    "build": "./json/**/*.jsonc"
+    "build": {
+      "patterns": [
+        "src/json/theme.jsonc",
+        "src/json/schema/report-theme.schema.jsonc",
+        "theme.jsonc",
+        "report-theme.schema.jsonc"
+      ],
+      "verbose": true,
+      "runOnChangesOnly": true
+    }
   },
   "scripts": {
     "test": "echo 'no tests'",
-    "build": "npm run fix_schema && npm run fix_theme",
+    "start": "node ./src/js/index.js",
+    "fix": "npm run fix_schema && npm run fix_theme",
+    "fix_theme": "fixjson ./src/json/theme.jsonc > out/dark-plus-report-theme.json",
     "fix_schema": "fixjson ./src/json/schema/report-theme.schema.jsonc > out/report-theme.schema.json",
-    "fix_theme": "fixjson ./src/json/schema/report-theme.schema.jsonc > out/report-theme.schema.json"
+    "build": "node ./src/js/index.js",
+    "watch": "CHOKIDAR_USEPOLLING=true npm-watch build"
   },
   "dependencies": {
     "fixjson": "^1.1.2",
     "json5": "^2.2.0",
     "npm-watch": "^0.11.0",
     "pkg-dir": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.2"
   }
 }

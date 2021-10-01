@@ -15,7 +15,10 @@
       "type": "array",
       "items": { "type": "string" }
     },
-    "good":    { "type": "string", "description": "These properties set the status colors used by the waterfall chart and the KPI visual." },
+    "good":    { 
+      "type": "string", 
+      "description": "These properties set the status colors used by the waterfall chart and the KPI visual." 
+    },
     "neutral": { "type": "string", "description": "These properties set the status colors used by the waterfall chart and the KPI visual." },
     "bad":     { "type": "string", "description": "These properties set the status colors used by the waterfall chart and the KPI visual." },
     "maximum": { "type": "string", "description": "These colors set the various gradient colors in the conditional formatting dialog box." },
