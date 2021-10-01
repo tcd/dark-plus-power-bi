@@ -6,10 +6,12 @@
     "json.schemas": [
         {
             "fileMatch": [
-                "*.theme.json"
+                "*.theme.json",
+                "theme.jsonc",
             ],
             // "url": "https://raw.githubusercontent.com/tcd/dark-plus-power-bi/master/schema/power-bi-report-theme.schema.json",
-            "url": "./src/json/schema/power-bi-report-theme.schema.json",
+            // "url": "./src/json/schema/power-bi-report-theme.schema.json",
+            "url": "./out/report-theme.schema.json",
         }
     ],
 }
