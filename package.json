@@ -5,16 +5,13 @@
   "description": "Power BI report theme based on Visual Studio Code's \"Dark+ (default dark)\" color theme.",
   "author": "Clay Dunston <dunstontc@gmail.com>",
   "homepage": "https://github.com/tcd/dark-plus-power-bi#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tcd/dark-plus-power-bi.git"
-  },
+  "repository": { "type": "git", "url": "git+https://github.com/tcd/dark-plus-power-bi.git" },
   "main": "./src/js/index.js",
   "watch": {
     "build": {
       "patterns": [
-        "src/json/theme.jsonc",
-        "src/json/schema/schema.jsonc"
+        "src/json/theme.json5",
+        "src/json/schema/schema.json5"
       ],
       "verbose": true,
       "runOnChangesOnly": true
@@ -23,9 +20,6 @@
   "scripts": {
     "test": "echo 'no tests'",
     "start": "node ./src/js/index.js",
-    "fix": "npm run fix_schema && npm run fix_theme",
-    "fix_theme": "fixjson ./src/json/theme.jsonc > out/dark-plus-report-theme.json",
-    "fix_schema": "fixjson ./src/json/schema/report-theme.schema.jsonc > out/report-theme.schema.json",
     "build": "node ./src/js/index.js",
     "watch": "CHOKIDAR_USEPOLLING=true npm-watch build"
   },

@@ -1,0 +1,107 @@
+{
+  "$id": "https://raw.githubusercontent.com/tcd/dark-plus-power-bi/master/out/report-theme.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Power BI Report Theme",
+  "description": "JSON schema for Power BI Report Theme JSON files.",
+  "type": "object",
+  "required": [ "name" ],
+  "properties": {
+
+    "name": {
+      "type": "string",
+      "description": "Name of the theme.",
+    },
+
+    "dataColors": {
+      "description": "The list of color hexadecimal codes to use to color shapes that represent data in Power BI Desktop visuals.\nThis list can have as many or as few colors as you want.\nOnce all colors from this list have been used, if the visual still needs more colors, it reverts back to using Power BI's default color palette.",
+      "type": "array",
+      "items": { "type": "string" },
+    },
+
+    "good":    { "$ref": "#/definitions/color-properties-1" },
+    "neutral": { "$ref": "#/definitions/color-properties-1" },
+    "bad":     { "$ref": "#/definitions/color-properties-1" },
+
+    "maximum": { "$ref": "#/definitions/color-properties-2" },
+    "center":  { "$ref": "#/definitions/color-properties-2" },
+    "minimum": { "$ref": "#/definitions/color-properties-2" },
+    "null":    { "$ref": "#/definitions/color-properties-2" },
+
+    // =========================================================================
+    // Color Classes (structural colors)
+    // =========================================================================
+    "firstLevelElements":  { "$ref": "#/definitions/hex-color", "description": "What it formats:\n- Labels background color (when outside data points)\n- Trend line color\n- Textbox default color\n- Table and matrix values and totals font colors Data bars axis color\n- Card data labels\n- Gauge callout value color\n- KPI goal color\n- KPI text color\n- Slicer item color (when in focus mode)\n- Slicer dropdown item font color\n- Slicer numeric input font color\n- Slicer header font color\n- Scatter chart ratio line color\n- Line chart forecast line color\n- Map leader line color\n- Filter pane and card text color\n- Modern visual tooltips text and icon color (Preview)" },
+    "secondLevelElements": { "$ref": "#/definitions/hex-color", "description": "What it formats:\n- 'light' secondary text classes Label colors\n- Legend label color\n- Axis label color\n- Table and matrix header font color\n- Gauge target and target leader line color\n- KPI trend axis color\n- Slicer slider color\n- Slicer item font color\n- Slicer outline color\n- Line chart hover color\n- Multi-row card title color\n- Ribbon chart stroke color\n- Shape map border color\n- Button text font color\n- Button icon line color\n- Button outline color" },
+    "thirdLevelElements":  { "$ref": "#/definitions/hex-color", "description": "What it formats:\n- Axis gridline color\n- Table and matrix grid color\n- Slicer header background color (when in focus mode)\n- Multi-row card outline color\n- Shape fill color\n- Gauge arc background color\n- Applied filter card background color\n- When background = FFFFFF:\n- Disabled button fill color\n- Disabled button outline color" },
+    "fourthLevelElements": { "$ref": "#/definitions/hex-color", "description": "What it formats:\n- legend dimmed color\n- Card category label color\n- Multi-row card category labels color\n- Mulit-row card bar color\n- Funnel chart conversion rate stroke color\n- Disabled button text font color\n- Disabled button icon line color" },
+    "background":          { "$ref": "#/definitions/hex-color", "description": "What it formats:\n- Labels background color (when inside data points)\n- Slicer dropdown items background color\n- Donut chart stroke color\n- Treemap stroke color\n- Combo chart background color\n- Button fill color\n- Filter pane and available filter card background color\n- Modern visual tooltips background color (Preview)" },
+    "secondaryBackground": { "$ref": "#/definitions/hex-color", "description": "What it formats:\n- Table and matrix grid outline color\n- Shape map default color\n- Ribbon chart ribbon fill color (when match series option is turned off)\n- When background != FFFFFF:\n- Disabled button fill color\n- Disabled button outline color\n- Modern visual tooltips separator line and hover color (Preview)" },
+    "tableAccent":         { "$ref": "#/definitions/hex-color", "description": "What it formats:\n- Overrides table and matrix grid outline color when present" },
+
+    // =========================================================================
+    // Text Classes
+    // =========================================================================
+    "textClasses": {
+      "type": "object",
+      "description": "Text Classes",
+      "properties": {
+        "callout":          { "$ref": "#/definitions/text-options", "description": "Associated visual objects:\n- Card data labels\n- KPI indicators" },
+        "header":           { "$ref": "#/definitions/text-options", "description": "Associated visual objects:\n- Key influencers headers" },
+        "title":            { "$ref": "#/definitions/text-options", "description": "Associated visual objects:\n- Category axis title\n- Value axis title\n- Multi-row card title\n- Slicer header" },
+        "largeTitle":       { "$ref": "#/definitions/text-options", "description": "Associated visual objects:\n- Visual title" },
+        "label":            { "$ref": "#/definitions/text-options", "description": "Associated visual objects:\n- Table and matrix column headers\n- Matrix row headers\n- Table and matrix grid\n- Table and matrix values" },
+        "semiboldLabel":    { "$ref": "#/definitions/text-options", "description": "Associated visual objects:\n- Key influencers profile text" },
+        "largeLabel":       { "$ref": "#/definitions/text-options", "description": "Associated visual objects:\n- Multi-row card data labels" },
+        "smallLabel":       { "$ref": "#/definitions/text-options", "description": "Associated visual objects:\n- Reference line labels\n- Slicer date range labels\n- Slicer numeric input text style\n- Slicer search box\n- Key influencers influencer text" },
+        "lightLabel":       { "$ref": "#/definitions/text-options", "description": "Associated visual objects:\n- Legend text\n- Button text\n- Category Axis labels\n- Funnel chart data labels\n- Funnel chart conversion rate labels\n- Gauge target\n- Scatter chart category label\n- Slicer items" },
+        "oldLabel":         { "$ref": "#/definitions/text-options", "description": "Associated visual objects:\n- Matrix subtotals\n- Matrix grand totals\n- Table totals" },
+        "largeLightLabel":  { "$ref": "#/definitions/text-options", "description": "Associated visual objects:\n- Card category labels\n- Gauge labels\n- Multi-row card category labels" },
+        "smallLightLabel":  { "$ref": "#/definitions/text-options", "description": "Associated visual objects:\n- Data labels\n- Value axis labels" },
+      },
+    },
+
+    // =========================================================================
+    // Visual Styles
+    // =========================================================================
+    "visualStyles": {
+      "type": "object"
+    },
+  },
+  "definitions": {
+    // =========================================================================
+    // Shared
+    // =========================================================================
+    "hex-color": { 
+      "type": "string",
+      "pattern": "^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$",
+    },
+    "text-options": { 
+      "type": "object",
+      "properties": {
+        "fontSize": { "type": "number", "description": "font-size" },
+        "fontFace": { "type": "string", "description": "@font-face" },
+        "color":    { "$ref": "#/definitions/hex-color", "description": "font-color" },
+      }
+    },
+    "icon-options": { 
+      "type": "object",
+      "properties": {
+        "description": { "type": "string" },
+        "url":         { "type": "string" }
+      }
+    },
+    // =========================================================================
+    // Real definitions
+    // =========================================================================
+    // good, neutral, bad
+    "color-properties-1": { 
+      "description": "These properties set the status colors used by the waterfall chart and the KPI visual.",
+      "$ref": "#/definitions/hex-color",
+    },
+    // maximum, center, minimum, null
+    "color-properties-2": { 
+      "description": "These colors set the various gradient colors in the conditional formatting dialog box.",
+      "$ref": "#/definitions/hex-color",
+    },
+  },
+}

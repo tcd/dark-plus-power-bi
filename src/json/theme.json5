@@ -1,5 +1,6 @@
 ﻿{
     "name": "Dark Plus",
+
     "dataColors": [
         "#9CDCFE",
         "#569CD6",
@@ -10,22 +11,27 @@
         "#CE9178",
         "#D7BA7D"
     ],
-    // "foreground": "#D4D4D4",
+
+    "foreground": "#D4D4D4",
     "foregroundNeutralSecondary": "#D4D4D4",
     "foregroundNeutralTertiary": "#979593",
     "background": "#3a3a3a",
     "backgroundLight": "#3B3A39",
     "backgroundNeutral": "#605E5C",
     "tableAccent": "#2878BD",
-    "maximum": "#608B4E",
-    "center": "#DCDCAA",
-    "minimum": "#D16969",
+
     "hyperlink": "#2878BD",
+    "visitedHyperlink": "#D0E4F5",
+
     "bad": "#D16969",
     "neutral": "#DCDCAA",
     "good": "#608B4E",
     "null": "#808080",
-    "visitedHyperlink": "#D0E4F5",
+
+    "maximum": "#608B4E",
+    "center": "#DCDCAA",
+    "minimum": "#D16969",
+
     "textClasses": {
         "callout": {
             "fontFace": "Arial",
