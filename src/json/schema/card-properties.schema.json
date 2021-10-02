@@ -4,6 +4,20 @@
     "title": "Power BI Report Theme Visual Styles",
     "description": "See (the official documentation)[https://docs.microsoft.com/en-us/power-bi/create-reports/desktop-report-themes#report-theme-json-file-format] for more information.",
     "type": "object",
+    "definitions": {
+        "display-units": {
+            "type": "string",
+            "title": "Display Units",
+            "description": "Select the units to display",
+            "enum": [
+                "None",
+                "Thousands",
+                "Millions",
+                "Billions",
+                "Trillions"
+            ]
+        }
+    },
     "properties": {
         "general": {
             "type": "object",
@@ -117,9 +131,7 @@
                             "title": "Text Size"
                         },
                         "labelDisplayUnits": {
-                            "type": "formatting",
-                            "title": "Display units",
-                            "description": "Select the units (millions, billions, etc.)"
+                            "$ref": "#/definitions/display-units"
                         },
                         "labelPrecision": {
                             "type": "number",
@@ -229,9 +241,7 @@
                             "title": "Text Size"
                         },
                         "labelDisplayUnits": {
-                            "type": "formatting",
-                            "title": "Display units",
-                            "description": "Select the units (millions, billions, etc.)"
+                            "$ref": "#/definitions/display-units"
                         },
                         "labelPrecision": {
                             "type": "number",
@@ -318,9 +328,7 @@
                             "title": "Text Size"
                         },
                         "secLabelDisplayUnits": {
-                            "type": "formatting",
-                            "title": "Display units",
-                            "description": "Select the units (millions, billions, etc.)"
+                            "$ref": "#/definitions/display-units"
                         },
                         "secLabelPrecision": {
                             "type": "number",
@@ -379,9 +387,7 @@
                             "description": "Select color for data labels"
                         },
                         "labelDisplayUnits": {
-                            "type": "formatting",
-                            "title": "Display units",
-                            "description": "Select the units (millions, billions, etc.)"
+                            "$ref": "#/definitions/display-units"
                         },
                         "labelPrecision": {
                             "type": "number",
@@ -401,8 +407,8 @@
                             "title": "Font family"
                         },
                         "labelDensity": {
-                            "type": "formatting",
-                            "title": "Label density"
+                            "type": "number",
+                            "title": "Label density (whole number, percentage)"
                         },
                         "labelOrientation": {
                             "enum": [
@@ -615,9 +621,7 @@
                             "description": "Set the vertical position for the reference line data label"
                         },
                         "dataLabelDisplayUnits": {
-                            "type": "formatting",
-                            "title": "Display units",
-                            "description": "Select the units (millions, billions, etc.)"
+                            "$ref": "#/definitions/display-units"
                         }
                     }
                 },
@@ -696,9 +700,7 @@
                             "description": "Set the vertical position for the reference line data label"
                         },
                         "dataLabelDisplayUnits": {
-                            "type": "formatting",
-                            "title": "Display units",
-                            "description": "Select the units (millions, billions, etc.)"
+                            "$ref": "#/definitions/display-units"
                         }
                     }
                 },
@@ -923,9 +925,7 @@
                             "description": "Select color for data labels"
                         },
                         "labelDisplayUnits": {
-                            "type": "formatting",
-                            "title": "Display units",
-                            "description": "Select the units (millions, billions, etc.)"
+                            "$ref": "#/definitions/display-units"
                         },
                         "labelPrecision": {
                             "type": "number",
@@ -955,9 +955,7 @@
                             "description": "Select color for data labels"
                         },
                         "labelDisplayUnits": {
-                            "type": "formatting",
-                            "title": "Display units",
-                            "description": "Select the units (millions, billions, etc.)"
+                            "$ref": "#/definitions/display-units"
                         },
                         "labelPrecision": {
                             "type": "number",
@@ -1156,9 +1154,7 @@
                             "description": "Set the vertical position for the reference line data label"
                         },
                         "dataLabelDisplayUnits": {
-                            "type": "formatting",
-                            "title": "Display units",
-                            "description": "Select the units (millions, billions, etc.)"
+                            "$ref": "#/definitions/display-units"
                         }
                     }
                 },
@@ -1755,9 +1751,7 @@
                     "type": "object",
                     "properties": {
                         "indicatorDisplayUnits": {
-                            "type": "formatting",
-                            "title": "Display units",
-                            "description": "Select the units (millions, billions, etc.)"
+                            "$ref": "#/definitions/display-units"
                         },
                         "indicatorPrecision": {
                             "type": "number",

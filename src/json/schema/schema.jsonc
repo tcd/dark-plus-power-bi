@@ -79,6 +79,8 @@
         },
         "display-units": {
             "type": "string",
+            "title": "Display Units",
+            "description": "Select the units to display",
             "enum": [
                 "None",
                 "Thousands",
