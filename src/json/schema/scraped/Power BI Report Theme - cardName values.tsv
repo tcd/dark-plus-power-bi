@@ -1,52 +1,52 @@
-cardName values
-axis: Gauge axis
-breakdown: Breakdown
-bubbles: Bubbles
-calloutValue: Callout Value
-card: Card
-cardTitle: Card Title
-categoryAxis: X-Axis
-categoryLabels: Category labels
-columnFormatting: Field formatting
-columnHeaders: Column headers
-dataLabels: Data labels
-fill: Fill
-fillPoint: Fill point
-forecast: Forecast
-general: General
-goals: Goals
-grid: Grid
-header: Header
-imageScaling: Scaling
-indicator: Indicator
-items: Items
-labels: Data labels
-legend: Legend
-lineStyles: Shapes
-mapControls: Map controls
-mapStyles: Map styles
-numericInputStyle: Numeric inputs
-percentBarLabel: Conversion Rate Label
-plotArea: Plot Area
-plotAreaShading: Symmetry shading
-ratioLine: Ratio line
-referenceLine: Constant Line
-ribbonChart: Ribbons
-rotation: Rotation
-rowHeaders: Row headers
-selection: Selection Controls
-sentimentColors: Sentiment colors
-shape: Shape
-slider: Slider
-status: Color coding
-subTotals: Subtotals
-target: Target
-total: Grand total
-trend: Trend Line
-trendline: Trend axis
-valueAxis: Y-Axis
-values: Values
-wordWrap: Word wrap
-xAxisReferenceLine: X-Axis Constant Line
-y1AxisReferenceLine: Constant Line
-zoom: Zoom
+cardName	values
+axis	Gauge axis
+breakdown	Breakdown
+bubbles	Bubbles
+calloutValue	Callout Value
+card	Card
+cardTitle	Card Title
+categoryAxis	X-Axis
+categoryLabels	Category labels
+columnFormatting	Field formatting
+columnHeaders	Column headers
+dataLabels	Data labels
+fill	Fill
+fillPoint	Fill point
+forecast	Forecast
+general	General
+goals	Goals
+grid	Grid
+header	Header
+imageScaling	Scaling
+indicator	Indicator
+items	Items
+labels	Data labels
+legend	Legend
+lineStyles	Shapes
+mapControls	Map controls
+mapStyles	Map styles
+numericInputStyle	Numeric inputs
+percentBarLabel	Conversion Rate Label
+plotArea	Plot Area
+plotAreaShading	Symmetry shading
+ratioLine	Ratio line
+referenceLine	Constant Line
+ribbonChart	Ribbons
+rotation	Rotation
+rowHeaders	Row headers
+selection	Selection Controls
+sentimentColors	Sentiment colors
+shape	Shape
+slider	Slider
+status	Color coding
+subTotals	Subtotals
+target	Target
+total	Grand total
+trend	Trend Line
+trendline	Trend axis
+valueAxis	Y-Axis
+values	Values
+wordWrap	Word wrap
+xAxisReferenceLine	X-Axis Constant Line
+y1AxisReferenceLine	Constant Line
+zoom	Zoom

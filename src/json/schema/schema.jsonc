@@ -26,7 +26,6 @@
         "center":  { "$ref": "#/definitions/color-properties-2" },
         "minimum": { "$ref": "#/definitions/color-properties-2" },
         "null":    { "$ref": "#/definitions/color-properties-2" },
-
         // =========================================================================
         // Color Classes (structural colors)
         // =========================================================================
@@ -37,7 +36,6 @@
         "background":          { "$ref": "#/definitions/hex-color", "description": "What it formats:\n- Labels background color (when inside data points)\n- Slicer dropdown items background color\n- Donut chart stroke color\n- Treemap stroke color\n- Combo chart background color\n- Button fill color\n- Filter pane and available filter card background color\n- Modern visual tooltips background color (Preview)" },
         "secondaryBackground": { "$ref": "#/definitions/hex-color", "description": "What it formats:\n- Table and matrix grid outline color\n- Shape map default color\n- Ribbon chart ribbon fill color (when match series option is turned off)\n- When background != FFFFFF:\n- Disabled button fill color\n- Disabled button outline color\n- Modern visual tooltips separator line and hover color (Preview)" },
         "tableAccent":         { "$ref": "#/definitions/hex-color", "description": "What it formats:\n- Overrides table and matrix grid outline color when present" },
-
         // =========================================================================
         // Text Classes
         // =========================================================================
@@ -59,10 +57,20 @@
                 "smallLightLabel":  { "$ref": "#/definitions/text-options", "description": "Associated visual objects:\n- Data labels\n- Value axis labels" },
             },
         },
-
         // =========================================================================
         // Visual Styles
         // =========================================================================
+        /**
+         *  "visualStyles": {
+         *          "<visualName>": {
+         *              "<styleName>": {
+         *                  "<cardName>": [{
+         *                      "<propertyName>": <propertyValue>
+         *                  }]
+         *              }
+         *          }
+         *      }
+         */
         "visualStyles": {
             "type": "object",
             "title": "Visual Styles",
@@ -119,5 +127,41 @@
             "description": "These colors set the various gradient colors in the conditional formatting dialog box.",
             "$ref": "#/definitions/hex-color",
         },
+        "visual-names": {
+            "enum": [
+                "areaChart",
+                "barChart",
+                "basicShape",
+                "card",
+                "clusteredBarChart",
+                "clusteredColumnChart",
+                "columnChart",
+                "comboChart",
+                "donutChart",
+                "filledMap",
+                "funnel",
+                "gauge",
+                "general",
+                "hundredPercentStackedBarChart",
+                "hundredPercentStackedColumnChart",
+                "image",
+                "kpi",
+                "lineChart",
+                "lineClusteredColumnComboChart",
+                "lineStackedColumnComboChart",
+                "map",
+                "multiRowCard",
+                "pieChart",
+                "pivotTable",
+                "ribbonChart",
+                "scatterChart",
+                "shapeMap",
+                "slicer",
+                "stackedAreaChart",
+                "tableEx",
+                "treemap",
+                "waterfallChart",
+            ],
+        }
     },
 }

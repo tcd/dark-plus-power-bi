@@ -5,12 +5,15 @@
     "description": "See (the official documentation)[https://docs.microsoft.com/en-us/power-bi/create-reports/desktop-report-themes#report-theme-json-file-format] for more information.",
     "type": "object",
     "definitions": {
+        // =====================================================================
+        // Custom
+        // =====================================================================
         "hex-color": {
             "type": "string",
             "description": "HEX color code",
             "pattern": "^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$"
         },
-        "fill": {
+        "fill-options": {
             "type": "object",
             "required": [ "solid" ],
             "properties": {
@@ -44,7 +47,1807 @@
                 1,
                 0
             ]
-        }
+        },
+        // =====================================================================
+        // Refactored from Microsoft
+        // =====================================================================
+        "show-options": {
+            "type": "boolean",
+            "title": "Show"
+        },
+        // =====================================================================
+        // From Microsoft
+        // =====================================================================
+        "responsive": {
+            "type": "boolean",
+            "title": "(Preview) Responsive",
+            "description": "The visual will adapt to size changes"
+        },
+        "legend": {
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                },
+                "position": {
+                    "enum": [
+                        "Top",
+                        "Bottom",
+                        "Left",
+                        "Right",
+                        "TopCenter",
+                        "BottomCenter",
+                        "LeftCenter",
+                        "RightCenter"
+                    ],
+                    "title": "Position",
+                    "description": "Select the location for the legend"
+                },
+                "showTitle": {
+                    "type": "boolean",
+                    "title": "Title",
+                    "description": "Display a title for legend symbols"
+                },
+                "labelColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color"
+                },
+                "fontFamily": {
+                    "type": "string",
+                    "title": "Font family"
+                },
+                "fontSize": {
+                    "type": "number",
+                    "title": "Text Size"
+                }
+            }
+        },
+        "categoryAxis": {
+            "title": "X-Axis",
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                },
+                "axisScale": {
+                    "enum": [
+                        "linear",
+                        "log"
+                    ],
+                    "title": "Scale type"
+                },
+                "start": {
+                    "type": [
+                        "number",
+                        "string"
+                    ],
+                    "title": "Start",
+                    "description": "Enter a starting value (either a number or a datetime) (optional)"
+                },
+                "end": {
+                    "type": [
+                        "number",
+                        "string"
+                    ],
+                    "title": "End",
+                    "description": "Enter an ending value (either a number or a datetime) (optional)"
+                },
+                "axisType": {
+                    "enum": [
+                        "Scalar",
+                        "Categorical"
+                    ],
+                    "title": "Type"
+                },
+                "showAxisTitle": {
+                    "type": "boolean",
+                    "title": "Title",
+                    "description": "Title for the X-axis/Y-axis"
+                },
+                "axisStyle": {
+                    "enum": [
+                        "showTitleOnly",
+                        "showUnitOnly",
+                        "showBoth"
+                    ],
+                    "title": "Style"
+                },
+                "labelColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color"
+                },
+                "fontFamily": {
+                    "type": "string",
+                    "title": "Font family"
+                },
+                "fontSize": {
+                    "type": "number",
+                    "title": "Text Size"
+                },
+                "labelDisplayUnits": {
+                    "$ref": "#/definitions/display-units"
+                },
+                "labelPrecision": {
+                    "type": "number",
+                    "title": "Value decimal places",
+                    "description": "Select the number of decimal places to display for the values"
+                },
+                "concatenateLabels": {
+                    "type": "boolean",
+                    "title": "Concatenate labels",
+                    "description": "Always concatenate levels of the hierarchy instead of drawing the hierarchy."
+                },
+                "preferredCategoryWidth": {
+                    "type": "number",
+                    "title": "Minimum category width"
+                },
+                "titleColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Title color"
+                },
+                "titleFontFamily": {
+                    "type": "string",
+                    "title": "Font family"
+                },
+                "titleFontSize": {
+                    "type": "number",
+                    "title": "Title text size"
+                },
+                "position": {
+                    "enum": [
+                        "Left",
+                        "Right"
+                    ],
+                    "title": "Position",
+                    "description": "Select left or right"
+                },
+                "color": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color",
+                    "description": "Select color for data labels"
+                },
+                "duration": {
+                    "type": "number"
+                }
+            }
+        },
+        "valueAxis": {
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                },
+                "position": {
+                    "enum": [
+                        "Left",
+                        "Right"
+                    ],
+                    "title": "Position",
+                    "description": "Select left or right"
+                },
+                "axisScale": {
+                    "enum": [
+                        "linear",
+                        "log"
+                    ],
+                    "title": "Scale type"
+                },
+                "start": {
+                    "type": [
+                        "number",
+                        "string"
+                    ],
+                    "title": "Start",
+                    "description": "Enter a starting value (either a number or a datetime) (optional)"
+                },
+                "end": {
+                    "type": [
+                        "number",
+                        "string"
+                    ],
+                    "title": "End",
+                    "description": "Enter an ending value (either a number or a datetime) (optional)"
+                },
+                "showAxisTitle": {
+                    "type": "boolean",
+                    "title": "Title",
+                    "description": "Title for the Y-axis/X-axis"
+                },
+                "axisStyle": {
+                    "enum": [
+                        "showTitleOnly",
+                        "showUnitOnly",
+                        "showBoth"
+                    ],
+                    "title": "Style"
+                },
+                "labelColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color"
+                },
+                "fontFamily": {
+                    "type": "string",
+                    "title": "Font family"
+                },
+                "fontSize": {
+                    "type": "number",
+                    "title": "Text Size"
+                },
+                "labelDisplayUnits": {
+                    "$ref": "#/definitions/display-units"
+                },
+                "labelPrecision": {
+                    "type": "number",
+                    "title": "Value decimal places",
+                    "description": "Select the number of decimal places to display for the values"
+                },
+                "titleColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Title color"
+                },
+                "titleFontFamily": {
+                    "type": "string",
+                    "title": "Font family"
+                },
+                "titleFontSize": {
+                    "type": "number",
+                    "title": "Title text size"
+                },
+                "axisLabel": {
+                    "type": "string",
+                    "title": "Y-Axis (Column)"
+                },
+                "secShow": {
+                    "type": "boolean",
+                    "title": "Show secondary"
+                },
+                "alignZeros": {
+                    "type": "boolean",
+                    "title": "Align zeros",
+                    "description": "Align the zero tick marks for both value axes"
+                },
+                "secAxisLabel": {
+                    "type": "string",
+                    "title": "Y-Axis (Line)"
+                },
+                "secPosition": {
+                    "enum": [
+                        "Left",
+                        "Right"
+                    ],
+                    "title": "Position",
+                    "description": "Select left or right"
+                },
+                "secAxisScale": {
+                    "enum": [
+                        "linear",
+                        "log"
+                    ],
+                    "title": "Scale type"
+                },
+                "secStart": {
+                    "type": "number",
+                    "title": "Start",
+                    "description": "Enter a starting value (optional)"
+                },
+                "secEnd": {
+                    "type": "number",
+                    "title": "End",
+                    "description": "Enter an ending value (optional)"
+                },
+                "secShowAxisTitle": {
+                    "type": "boolean",
+                    "title": "Title",
+                    "description": "Title for the Y-axis"
+                },
+                "secAxisStyle": {
+                    "enum": [
+                        "showTitleOnly",
+                        "showUnitOnly",
+                        "showBoth"
+                    ],
+                    "title": "Style"
+                },
+                "secLabelColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color"
+                },
+                "secFontFamily": {
+                    "type": "string",
+                    "title": "Font family"
+                },
+                "secFontSize": {
+                    "type": "number",
+                    "title": "Text Size"
+                },
+                "secLabelDisplayUnits": {
+                    "$ref": "#/definitions/display-units"
+                },
+                "secLabelPrecision": {
+                    "type": "number",
+                    "title": "Value decimal places",
+                    "description": "Select the number of decimal places to display for the values"
+                },
+                "secTitleColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Title color"
+                },
+                "secTitleFontFamily": {
+                    "type": "string",
+                    "title": "Font family"
+                },
+                "secTitleFontSize": {
+                    "type": "number",
+                    "title": "Title text size"
+                }
+            }
+        },
+        "dataPoint": {
+            "type": "object",
+            "properties": {
+                "defaultColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Default color, Default Column Color"
+                },
+                "fill": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Fill"
+                },
+                "defaultCategoryColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Default Color, Default Column Color"
+                },
+                "showAllDataPoints": {
+                    "type": "boolean",
+                    "title": "Show all"
+                }
+            }
+        },
+        "labels": {
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                },
+                "showSeries": {
+                    "type": "boolean",
+                    "title": "Show"
+                },
+                "color": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color",
+                    "description": "Select color for data labels"
+                },
+                "labelDisplayUnits": {
+                    "$ref": "#/definitions/display-units"
+                },
+                "labelPrecision": {
+                    "type": "number",
+                    "title": "Value decimal places",
+                    "description": "Select the number of decimal places to display for the values"
+                },
+                "showAll": {
+                    "type": "boolean",
+                    "title": "Customize series"
+                },
+                "fontSize": {
+                    "type": "number",
+                    "title": "Text Size"
+                },
+                "fontFamily": {
+                    "type": "string",
+                    "title": "Font family"
+                },
+                "labelDensity": {
+                    "type": "number",
+                    "title": "Label density (whole number, percentage)"
+                },
+                "labelOrientation": {
+                    "enum": [
+                        "vertical",
+                        "horizontal"
+                    ],
+                    "title": "Orientation"
+                },
+                "labelPosition": {
+                    "enum": [
+                        "Auto",
+                        "InsideEnd",
+                        "OutsideEnd",
+                        "InsideCenter",
+                        "InsideBase"
+                    ],
+                    "title": "Position"
+                },
+                "percentageLabelPrecision": {
+                    "type": "number",
+                    "title": "% decimal places",
+                    "description": "Select the number of decimal places to display for the percentages"
+                },
+                "labelStyle": {
+                    "enum": [
+                        "Category",
+                        "Data",
+                        "Percent of total",
+                        "Both",
+                        "Category, percent of total",
+                        "Data value, percent of total",
+                        "Category, data value, percent of total"
+                    ],
+                    "title": "Label style"
+                }
+            }
+        },
+        "lineStyles": {
+            "type": "object",
+            "properties": {
+                "strokeWidth": {
+                    "type": "number",
+                    "title": "Stroke width"
+                },
+                "strokeLineJoin": {
+                    "enum": [
+                        "miter",
+                        "round",
+                        "bevel"
+                    ],
+                    "title": "Join type"
+                },
+                "lineStyle": {
+                    "enum": [
+                        "dashed",
+                        "solid",
+                        "dotted"
+                    ],
+                    "title": "Line style"
+                },
+                "showMarker": {
+                    "type": "boolean",
+                    "title": "Show marker"
+                },
+                "markerShape": {
+                    "enum": [
+                        "circle",
+                        "square",
+                        "diamond",
+                        "triangle",
+                        "x",
+                        "shortDash",
+                        "longDash",
+                        "plus"
+                    ],
+                    "title": "Marker shape"
+                },
+                "markerSize": {
+                    "type": "number",
+                    "title": "Marker size"
+                },
+                "markerColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Marker color"
+                },
+                "showSeries": {
+                    "type": "boolean",
+                    "title": "Show, Customize series"
+                },
+                "shadeArea": {
+                    "type": "boolean",
+                    "title": "Shade area"
+                }
+            }
+        },
+        "plotArea": {
+            "type": "object",
+            "properties": {
+                "transparency": {
+                    "type": "number",
+                    "title": "Transparency",
+                    "description": "Set transparency for background color"
+                }
+            }
+        },
+        "trend": {
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                },
+                "title": {
+                    "type": "string",
+                    "title": "Name",
+                    "description": "Set trend line name"
+                },
+                "lineColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color",
+                    "description": "Set trend line color"
+                },
+                "transparency": {
+                    "type": "number",
+                    "title": "Transparency",
+                    "description": "Set transparency for trend line color"
+                },
+                "style": {
+                    "enum": [
+                        "dashed",
+                        "solid",
+                        "dotted"
+                    ],
+                    "title": "Style",
+                    "description": "Set trend line style"
+                },
+                "combineSeries": {
+                    "type": "boolean",
+                    "title": "Combine Series",
+                    "description": "Show one trend line per series or combine"
+                }
+            }
+        },
+        "y1AxisReferenceLine": {
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                },
+                "value": {
+                    "type": "number",
+                    "title": "Value",
+                    "description": "Set reference line numeric value"
+                },
+                "lineColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color",
+                    "description": "Set reference line color"
+                },
+                "transparency": {
+                    "type": "number",
+                    "title": "Transparency",
+                    "description": "Set transparency for reference line color"
+                },
+                "style": {
+                    "enum": [
+                        "dashed",
+                        "solid",
+                        "dotted"
+                    ],
+                    "title": "Line style"
+                },
+                "position": {
+                    "enum": [
+                        "back",
+                        "front"
+                    ],
+                    "title": "Position",
+                    "description": "Arrange relative to chart data points"
+                },
+                "dataLabelShow": {
+                    "type": "boolean",
+                    "title": "Data label",
+                    "description": "Display a data label for the reference line"
+                },
+                "dataLabelColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color",
+                    "description": "Set the reference line data label color"
+                },
+                "dataLabelDecimalPoints": {
+                    "type": "number",
+                    "title": "Decimal Places"
+                },
+                "dataLabelHorizontalPosition": {
+                    "enum": [
+                        "left",
+                        "right"
+                    ],
+                    "title": "Horizontal Position",
+                    "description": "Set the horizontal position for the reference line data label"
+                },
+                "dataLabelVerticalPosition": {
+                    "enum": [
+                        "above",
+                        "under"
+                    ],
+                    "title": "Vertical Position",
+                    "description": "Set the vertical position for the reference line data label"
+                },
+                "dataLabelDisplayUnits": {
+                    "$ref": "#/definitions/display-units"
+                }
+            }
+        },
+        "referenceLine": {
+            "title": "Constant Line",
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                },
+                "title": {
+                    "type": "string",
+                    "title": "Name",
+                    "description": "Set reference line name"
+                },
+                "value": {
+                    "type": "number",
+                    "title": "Value",
+                    "description": "Set reference line numeric value"
+                },
+                "lineColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color",
+                    "description": "Set reference line color"
+                },
+                "transparency": {
+                    "type": "number",
+                    "title": "Transparency",
+                    "description": "Set transparency for reference line color"
+                },
+                "style": {
+                    "enum": [
+                        "dashed",
+                        "solid",
+                        "dotted"
+                    ],
+                    "title": "Line style"
+                },
+                "position": {
+                    "enum": [
+                        "back",
+                        "front"
+                    ],
+                    "title": "Position",
+                    "description": "Arrange relative to chart data points"
+                },
+                "dataLabelShow": {
+                    "type": "boolean",
+                    "title": "Data label",
+                    "description": "Display a data label for the reference line"
+                },
+                "dataLabelColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color",
+                    "description": "Set the reference line data label color"
+                },
+                "dataLabelDecimalPoints": {
+                    "type": "number",
+                    "title": "Decimal Places"
+                },
+                "dataLabelHorizontalPosition": {
+                    "enum": [
+                        "left",
+                        "right"
+                    ],
+                    "title": "Horizontal Position",
+                    "description": "Set the horizontal position for the reference line data label"
+                },
+                "dataLabelVerticalPosition": {
+                    "enum": [
+                        "above",
+                        "under"
+                    ],
+                    "title": "Vertical Position",
+                    "description": "Set the vertical position for the reference line data label"
+                },
+                "dataLabelDisplayUnits": {
+                    "$ref": "#/definitions/display-units"
+                }
+            }
+        },
+        "line": {
+            "type": "object",
+            "properties": {
+                "lineColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Line color"
+                },
+                "transparency": {
+                    "type": "number",
+                    "title": "Transparency",
+                    "description": "Set transparency for background color"
+                },
+                "weight": {
+                    "type": "number",
+                    "title": "Weight"
+                },
+                "roundEdge": {
+                    "type": "number",
+                    "title": "Round edges"
+                }
+            }
+        },
+        "fill": {
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                },
+                "fillColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Fill color"
+                },
+                "transparency": {
+                    "type": "number",
+                    "title": "Transparency",
+                    "description": "Set transparency for background color"
+                }
+            }
+        },
+        "rotation": {
+            "type": "object",
+            "properties": {
+                "angle": {
+                    "type": "number",
+                    "title": "Rotation"
+                }
+            }
+        },
+        "categoryLabels": {
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                },
+                "color": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color",
+                    "description": "Select color for data labels"
+                },
+                "fontSize": {
+                    "type": "number",
+                    "title": "Text Size"
+                },
+                "fontFamily": {
+                    "type": "string",
+                    "title": "Font family"
+                }
+            }
+        },
+        "wordWrap": {
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                }
+            }
+        },
+        "dataLabels": {
+            "type": "object",
+            "properties": {
+                "color": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color",
+                    "description": "Select color for data labels"
+                },
+                "fontSize": {
+                    "type": "number",
+                    "title": "Text Size"
+                },
+                "fontFamily": {
+                    "type": "string",
+                    "title": "Font family"
+                }
+            }
+        },
+        "cardTitle": {
+            "type": "object",
+            "properties": {
+                "color": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color",
+                    "description": "Select color for data labels"
+                },
+                "fontSize": {
+                    "type": "number",
+                    "title": "Text Size"
+                },
+                "fontFamily": {
+                    "type": "string",
+                    "title": "Font family"
+                }
+            }
+        },
+        "card": {
+            "type": "object",
+            "properties": {
+                "outline": {
+                    "enum": [
+                        "None",
+                        "BottomOnly",
+                        "TopOnly",
+                        "LeftOnly",
+                        "RightOnly",
+                        "TopBottom",
+                        "LeftRight",
+                        "Frame"
+                    ],
+                    "title": "Outline"
+                },
+                "outlineColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Outline color",
+                    "description": "Color of the outline"
+                },
+                "outlineWeight": {
+                    "type": "number",
+                    "title": "Outline weight",
+                    "description": "Thickness of the outline in pixels"
+                },
+                "barShow": {
+                    "type": "boolean",
+                    "title": "Show bar",
+                    "description": "Display a bar to the left side of the card as an accent"
+                },
+                "barColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Bar color"
+                },
+                "barWeight": {
+                    "type": "number",
+                    "title": "Bar thickness",
+                    "description": "Thickness of the bar in pixels"
+                },
+                "cardPadding": {
+                    "type": "number",
+                    "title": "Padding",
+                    "description": "Background"
+                },
+                "cardBackground": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Background"
+                }
+            }
+        },
+        "percentBarLabel": {
+            "title": "Conversion Rate Label",
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                },
+                "color": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color",
+                    "description": "Select color for data labels"
+                },
+                "fontSize": {
+                    "type": "number",
+                    "title": "Text Size"
+                },
+                "fontFamily": {
+                    "type": "string",
+                    "title": "Font family"
+                }
+            }
+        },
+        "axis": {
+            "title": "Gauge Axis",
+            "type": "object",
+            "properties": {
+                "min": {
+                    "type": "number",
+                    "title": "Min"
+                },
+                "max": {
+                    "type": "number",
+                    "title": "Max"
+                },
+                "target": {
+                    "type": "number",
+                    "title": "Target"
+                }
+            }
+        },
+        "target": {
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                },
+                "color": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color",
+                    "description": "Select color for data labels"
+                },
+                "labelDisplayUnits": {
+                    "$ref": "#/definitions/display-units"
+                },
+                "labelPrecision": {
+                    "type": "number",
+                    "title": "Value decimal places",
+                    "description": "Select the number of decimal places to display for the values"
+                },
+                "fontSize": {
+                    "type": "number",
+                    "title": "Text Size"
+                },
+                "fontFamily": {
+                    "type": "string",
+                    "title": "Font family"
+                }
+            }
+        },
+        "calloutValue": {
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                },
+                "color": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color",
+                    "description": "Select color for data labels"
+                },
+                "labelDisplayUnits": {
+                    "$ref": "#/definitions/display-units"
+                },
+                "labelPrecision": {
+                    "type": "number",
+                    "title": "Value decimal places",
+                    "description": "Select the number of decimal places to display for the values"
+                }
+            }
+        },
+        "forecast": {
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                },
+                "title": {
+                    "type": "string",
+                    "title": "Name",
+                    "description": "Set forecast name"
+                },
+                "confidenceBandStyle": {
+                    "enum": [
+                        "fill",
+                        "line",
+                        "none"
+                    ],
+                    "title": "Confidence band style",
+                    "description": "Set forecast confidence band style"
+                },
+                "lineColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color",
+                    "description": "Set forecast line color"
+                },
+                "transparency": {
+                    "type": "number",
+                    "title": "Transparency",
+                    "description": "Set transparency for background color"
+                },
+                "style": {
+                    "enum": [
+                        "dashed",
+                        "solid",
+                        "dotted"
+                    ],
+                    "title": "Line style"
+                },
+                "transform": {
+                    "description": "queryTransform"
+                }
+            }
+        },
+        "bubbles": {
+            "type": "object",
+            "properties": {
+                "bubbleSize": {
+                    "type": "number",
+                    "title": "Size"
+                }
+            }
+        },
+        "mapControls": {
+            "type": "object",
+            "properties": {
+                "autoZoom": {
+                    "type": "boolean",
+                    "title": "Auto zoom"
+                },
+                "zoomLevel": {
+                    "type": "number"
+                },
+                "centerLatitude": {
+                    "type": "number"
+                },
+                "centerLongitude": {
+                    "type": "number"
+                }
+            }
+        },
+        "mapStyles": {
+            "type": "object",
+            "properties": {
+                "mapTheme": {
+                    "enum": [
+                        "aerial",
+                        "canvasDark",
+                        "canvasLight",
+                        "grayscale",
+                        "road"
+                    ],
+                    "title": "Theme"
+                }
+            }
+        },
+        "shape": {
+            "type": "object",
+            "properties": {
+                "map": {
+                    "description": "geoJson"
+                },
+                "projectionEnum": {
+                    "enum": [
+                        "albersUsa",
+                        "equirectangular",
+                        "mercator",
+                        "orthographic"
+                    ],
+                    "title": "Projection",
+                    "description": "Projection"
+                }
+            }
+        },
+        "zoom": {
+            "type": "object",
+            "properties": {
+                "autoZoom": {
+                    "type": "boolean",
+                    "title": "Auto zoom",
+                    "description": "Zoom in on shapes with available data"
+                },
+                "selectionZoom": {
+                    "type": "boolean",
+                    "title": "Selection zoom",
+                    "description": "Zoom in on selected shapes"
+                },
+                "manualZoom": {
+                    "type": "boolean",
+                    "title": "Manual zoom",
+                    "description": "Allow user to zoom and pan"
+                }
+            }
+        },
+        "xAxisReferenceLine": {
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                },
+                "value": {
+                    "type": "number",
+                    "title": "Value",
+                    "description": "Set reference line numeric value"
+                },
+                "lineColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color",
+                    "description": "Set reference line color"
+                },
+                "transparency": {
+                    "type": "number",
+                    "title": "Transparency",
+                    "description": "Set transparency for reference line color"
+                },
+                "style": {
+                    "enum": [
+                        "dashed",
+                        "solid",
+                        "dotted"
+                    ],
+                    "title": "Line style"
+                },
+                "position": {
+                    "enum": [
+                        "back",
+                        "front"
+                    ],
+                    "title": "Position",
+                    "description": "Arrange relative to chart data points"
+                },
+                "dataLabelShow": {
+                    "type": "boolean",
+                    "title": "Data label",
+                    "description": "Display a data label for the reference line"
+                },
+                "dataLabelColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color",
+                    "description": "Set the reference line data label color"
+                },
+                "dataLabelDecimalPoints": {
+                    "type": "number",
+                    "title": "Decimal Places"
+                },
+                "dataLabelHorizontalPosition": {
+                    "enum": [
+                        "left",
+                        "right"
+                    ],
+                    "title": "Horizontal Position",
+                    "description": "Set the horizontal position for the reference line data label"
+                },
+                "dataLabelVerticalPosition": {
+                    "enum": [
+                        "left",
+                        "right"
+                    ],
+                    "title": "Vertical Position",
+                    "description": "Set the vertical position for the reference line data label"
+                },
+                "dataLabelDisplayUnits": {
+                    "$ref": "#/definitions/display-units"
+                }
+            }
+        },
+        "fillPoint": {
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                }
+            }
+        },
+        "colorByCategory": {
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                }
+            }
+        },
+        "plotAreaShading": {
+            "title": "Symmetry Shading",
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                },
+                "upperShadingColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Upper shading",
+                    "description": "Shading color of the upper region"
+                },
+                "lowerShadingColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Lower shading",
+                    "description": "Shading color of the lower region"
+                },
+                "transparency": {
+                    "type": "number",
+                    "title": "Transparency",
+                    "description": "Set transparency for background color"
+                }
+            }
+        },
+        "ratioLine": {
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                },
+                "lineColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color",
+                    "description": "Set reference line color"
+                },
+                "transparency": {
+                    "type": "number",
+                    "title": "Transparency",
+                    "description": "Set transparency for line color"
+                },
+                "style": {
+                    "enum": [
+                        "dashed",
+                        "solid",
+                        "dotted"
+                    ],
+                    "title": "Line style"
+                }
+            }
+        },
+        "grid": {
+            "type": "object",
+            "properties": {
+                "outlineColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Outline color",
+                    "description": "Color of the outline"
+                },
+                "outlineWeight": {
+                    "type": "number",
+                    "title": "Outline weight",
+                    "description": "Thickness of the outline in pixels"
+                },
+                "gridVertical": {
+                    "type": "boolean",
+                    "title": "Vert grid",
+                    "description": "Show/Hide the vertical gridlines"
+                },
+                "gridVerticalColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Vert grid color",
+                    "description": "Color for the vertical gridlines"
+                },
+                "gridVerticalWeight": {
+                    "type": "number",
+                    "title": "Vert grid thickness",
+                    "description": "Thickness of the vertical gridlines in pixels"
+                },
+                "gridHorizontal": {
+                    "type": "boolean",
+                    "title": "Horiz grid",
+                    "description": "Show/Hide the horizontal gridlines"
+                },
+                "gridHorizontalColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Horiz grid color",
+                    "description": "Color for the horizontal gridlines"
+                },
+                "gridHorizontalWeight": {
+                    "type": "number",
+                    "title": "Horiz grid thickness",
+                    "description": "Thickness of the horizontal gridlines in pixels"
+                },
+                "rowPadding": {
+                    "type": "number",
+                    "title": "Row padding",
+                    "description": "Padding in pixels applied to top and bottom of every row"
+                },
+                "imageHeight": {
+                    "type": "number",
+                    "title": "Image height",
+                    "description": "The height of images in pixels"
+                },
+                "textSize": {
+                    "type": "number",
+                    "title": "Text Size"
+                }
+            }
+        },
+        "columnHeaders": {
+            "type": "object",
+            "properties": {
+                "outline": {
+                    "enum": [
+                        "None",
+                        "BottomOnly",
+                        "TopOnly",
+                        "LeftOnly",
+                        "RightOnly",
+                        "TopBottom",
+                        "LeftRight",
+                        "Frame"
+                    ],
+                    "title": "Outline"
+                },
+                "fontColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Font color",
+                    "description": "Font color of the cells"
+                },
+                "backColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Background color",
+                    "description": "Background color of the cells"
+                },
+                "wordWrap": {
+                    "type": "boolean",
+                    "title": "Word wrap"
+                },
+                "fontFamily": {
+                    "type": "string",
+                    "title": "Font family"
+                },
+                "fontSize": {
+                    "type": "number",
+                    "title": "Text Size"
+                },
+                "autoSizeColumnWidth": {
+                    "type": "boolean",
+                    "title": "Auto-size column width"
+                },
+                "urlIcon": {
+                    "type": "boolean",
+                    "title": "URL icon",
+                    "description": "Show an icon instead of the full URL"
+                }
+            }
+        },
+        "values": {
+            "type": "object",
+            "properties": {
+                "outline": {
+                    "enum": [
+                        "None",
+                        "BottomOnly",
+                        "TopOnly",
+                        "LeftOnly",
+                        "RightOnly",
+                        "TopBottom",
+                        "LeftRight",
+                        "Frame"
+                    ],
+                    "title": "Outline"
+                },
+                "backColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color scales"
+                },
+                "fontColorPrimary": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Font color",
+                    "description": "Font color of the odd rows"
+                },
+                "backColorPrimary": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Background color",
+                    "description": "Background color of the odd rows"
+                },
+                "fontColorSecondary": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Alternate font color",
+                    "description": "Font color of the even rows"
+                },
+                "backColorSecondary": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Alternate background color",
+                    "description": "Background color of the even rows"
+                },
+                "urlIcon": {
+                    "type": "boolean",
+                    "title": "URL icon",
+                    "description": "Show an icon instead of the full URL"
+                },
+                "fontFamily": {
+                    "type": "string",
+                    "title": "Font family"
+                },
+                "fontSize": {
+                    "type": "number",
+                    "title": "Text Size"
+                },
+                "wordWrap": {
+                    "type": "boolean",
+                    "title": "Word wrap"
+                },
+                "bandedRowHeaders": {
+                    "type": "boolean",
+                    "title": "Banded row style",
+                    "description": "Apply banded row style to the last level of the row group headers, using the colors of the values."
+                },
+                "valuesOnRow": {
+                    "type": "boolean",
+                    "title": "Show on rows",
+                    "description": "Show values in row groups rather than columns"
+                }
+            }
+        },
+        "total": {
+            "type": "object",
+            "properties": {
+                "outline": {
+                    "enum": [
+                        "None",
+                        "BottomOnly",
+                        "TopOnly",
+                        "LeftOnly",
+                        "RightOnly",
+                        "TopBottom",
+                        "LeftRight",
+                        "Frame"
+                    ],
+                    "title": "Outline"
+                },
+                "fontColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Font color",
+                    "description": "Font color of the cells"
+                },
+                "backColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Background color",
+                    "description": "Background color of the cells"
+                },
+                "applyToHeaders": {
+                    "type": "boolean",
+                    "title": "Apply to labels"
+                },
+                "totals": {
+                    "type": "boolean",
+                    "title": "Totals"
+                },
+                "fontFamily": {
+                    "type": "string",
+                    "title": "Font family"
+                },
+                "fontSize": {
+                    "type": "number",
+                    "title": "Text Size"
+                }
+            }
+        },
+        "columnFormatting": {
+            "title": "Field formatting",
+            "type": "object",
+            "properties": {
+                "fontColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Font color",
+                    "description": "Font color of the cells"
+                },
+                "backColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Background color",
+                    "description": "Background color of the cells"
+                },
+                "styleHeader": {
+                    "type": "boolean",
+                    "title": "Color header"
+                },
+                "styleValues": {
+                    "type": "boolean",
+                    "title": "Color values"
+                },
+                "styleTotal": {
+                    "type": "boolean",
+                    "title": "Color total"
+                },
+                "styleSubtotals": {
+                    "type": "boolean",
+                    "title": "Color subtotals"
+                }
+            }
+        },
+        "rowHeaders": {
+            "type": "object",
+            "properties": {
+                "outline": {
+                    "enum": [
+                        "None",
+                        "BottomOnly",
+                        "TopOnly",
+                        "LeftOnly",
+                        "RightOnly",
+                        "TopBottom",
+                        "LeftRight",
+                        "Frame"
+                    ],
+                    "title": "Outline"
+                },
+                "fontColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Font color",
+                    "description": "Font color of the cells"
+                },
+                "backColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Background color",
+                    "description": "Background color of the cells"
+                },
+                "wordWrap": {
+                    "type": "boolean",
+                    "title": "Word wrap"
+                },
+                "fontFamily": {
+                    "type": "string",
+                    "title": "Font family"
+                },
+                "fontSize": {
+                    "type": "number",
+                    "title": "Text Size"
+                },
+                "stepped": {
+                    "type": "boolean",
+                    "title": "Stepped layout",
+                    "description": "Render row headers with stepped layout"
+                },
+                "steppedLayoutIndentation": {
+                    "type": "number",
+                    "title": "Stepped layout indentation",
+                    "description": "Set the indentation, in pixels, applied to row headers"
+                },
+                "urlIcon": {
+                    "type": "boolean",
+                    "title": "URL icon",
+                    "description": "Show an icon instead of the full URL"
+                }
+            }
+        },
+        "subTotals": {
+            "type": "object",
+            "properties": {
+                "outline": {
+                    "enum": [
+                        "None",
+                        "BottomOnly",
+                        "TopOnly",
+                        "LeftOnly",
+                        "RightOnly",
+                        "TopBottom",
+                        "LeftRight",
+                        "Frame"
+                    ],
+                    "title": "Outline"
+                },
+                "fontColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Font color",
+                    "description": "Font color of the cells"
+                },
+                "backColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Background color",
+                    "description": "Background color of the cells"
+                },
+                "fontFamily": {
+                    "type": "string",
+                    "title": "Font family"
+                },
+                "fontSize": {
+                    "type": "number",
+                    "title": "Text Size"
+                },
+                "rowSubtotals": {
+                    "type": "boolean",
+                    "title": "Total row"
+                },
+                "columnSubtotals": {
+                    "type": "boolean",
+                    "title": "Total column"
+                },
+                "applyToHeaders": {
+                    "type": "boolean",
+                    "title": "Apply to labels"
+                }
+            }
+        },
+        "selection": {
+            "type": "object",
+            "properties": {
+                "selectAllCheckboxEnabled": {
+                    "type": "boolean",
+                    "title": "Select All"
+                },
+                "singleSelect": {
+                    "type": "boolean",
+                    "title": "Single Select"
+                }
+            }
+        },
+        "header": {
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                },
+                "fontColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Font color",
+                    "description": "Font color of the cells"
+                },
+                "background": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Background"
+                },
+                "outline": {
+                    "enum": [
+                        "None",
+                        "BottomOnly",
+                        "TopOnly",
+                        "LeftOnly",
+                        "RightOnly",
+                        "TopBottom",
+                        "LeftRight",
+                        "Frame"
+                    ],
+                    "title": "Outline"
+                },
+                "textSize": {
+                    "type": "number",
+                    "title": "Text Size"
+                },
+                "fontFamily": {
+                    "type": "string",
+                    "title": "Font family"
+                }
+            }
+        },
+        "items": {
+            "type": "object",
+            "properties": {
+                "fontColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Font color",
+                    "description": "Font color of the cells"
+                },
+                "background": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Background"
+                },
+                "outline": {
+                    "enum": [
+                        "None",
+                        "BottomOnly",
+                        "TopOnly",
+                        "LeftOnly",
+                        "RightOnly",
+                        "TopBottom",
+                        "LeftRight",
+                        "Frame"
+                    ],
+                    "title": "Outline"
+                },
+                "textSize": {
+                    "type": "number",
+                    "title": "Text Size"
+                },
+                "fontFamily": {
+                    "type": "string",
+                    "title": "Font family"
+                }
+            }
+        },
+        "numericInputStyle": {
+            "title": "Numeric Inputs",
+            "type": "object",
+            "properties": {
+                "fontColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Font color",
+                    "description": "Font color of the cells"
+                },
+                "textSize": {
+                    "type": "number",
+                    "title": "Text Size"
+                },
+                "fontFamily": {
+                    "type": "string",
+                    "title": "Font family"
+                },
+                "background": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Background"
+                }
+            }
+        },
+        "slider": {
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                },
+                "color": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Color"
+                }
+            }
+        },
+        "dateRange": {
+            "type": "object",
+            "properties": {
+                "includeToday": {
+                    "type": "boolean",
+                    "title": "Include today"
+                }
+            }
+        },
+        "sentimentColors": {
+            "type": "object",
+            "properties": {
+                "increaseFill": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Increase"
+                },
+                "decreaseFill": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Decrease"
+                },
+                "totalFill": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Total"
+                },
+                "otherFill": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Other"
+                }
+            }
+        },
+        "breakdown": {
+            "type": "object",
+            "properties": {
+                "maxBreakdowns": {
+                    "type": "integer",
+                    "title": "Max breakdowns",
+                    "description": "The number of individual breakdowns to show (rest grouped into Other)"
+                }
+            }
+        },
+        "indicator": {
+            "type": "object",
+            "properties": {
+                "indicatorDisplayUnits": {
+                    "$ref": "#/definitions/display-units"
+                },
+                "indicatorPrecision": {
+                    "type": "number",
+                    "title": "Value decimal places",
+                    "description": "Select the number of decimal places to display for the values"
+                },
+                "kpiFormat": {
+                    "title": "Format"
+                }
+            }
+        },
+        "trendline": {
+            "type": "object",
+            "properties": {
+                "show": {
+                    "type": "boolean",
+                    "title": "Show"
+                }
+            }
+        },
+        "goals": {
+            "type": "object",
+            "properties": {
+                "showGoal": {
+                    "type": "boolean",
+                    "title": "Goal"
+                },
+                "showDistance": {
+                    "type": "boolean",
+                    "title": "Distance"
+                }
+            }
+        },
+        "status": {
+            "type": "object",
+            "properties": {
+                "direction": {
+                    "enum": [
+                        "Positive",
+                        "Negative"
+                    ],
+                    "title": "Direction"
+                },
+                "goodColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Good Color"
+                },
+                "neutralColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Neutral Color"
+                },
+                "badColor": {
+                    "$ref": "#/definitions/fill-options",
+                    "title": "Bad Color"
+                }
+            }
+        },
     },
     "properties": {
         "general": {
@@ -82,7 +1885,7 @@
                             "description": "Display a title for legend symbols"
                         },
                         "labelColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color"
                         },
                         "fontFamily": {
@@ -147,7 +1950,7 @@
                             "title": "Style"
                         },
                         "labelColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color"
                         },
                         "fontFamily": {
@@ -176,7 +1979,7 @@
                             "title": "Minimum category width"
                         },
                         "titleColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Title color"
                         },
                         "titleFontFamily": {
@@ -196,7 +1999,7 @@
                             "description": "Select left or right"
                         },
                         "color": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color",
                             "description": "Select color for data labels"
                         },
@@ -257,7 +2060,7 @@
                             "title": "Style"
                         },
                         "labelColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color"
                         },
                         "fontFamily": {
@@ -277,7 +2080,7 @@
                             "description": "Select the number of decimal places to display for the values"
                         },
                         "titleColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Title color"
                         },
                         "titleFontFamily": {
@@ -344,7 +2147,7 @@
                             "title": "Style"
                         },
                         "secLabelColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color"
                         },
                         "secFontFamily": {
@@ -364,7 +2167,7 @@
                             "description": "Select the number of decimal places to display for the values"
                         },
                         "secTitleColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Title color"
                         },
                         "secTitleFontFamily": {
@@ -381,15 +2184,15 @@
                     "type": "object",
                     "properties": {
                         "defaultColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Default color, Default Column Color"
                         },
                         "fill": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Fill"
                         },
                         "defaultCategoryColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Default Color, Default Column Color"
                         },
                         "showAllDataPoints": {
@@ -410,7 +2213,7 @@
                             "title": "Show"
                         },
                         "color": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color",
                             "description": "Select color for data labels"
                         },
@@ -519,7 +2322,7 @@
                             "title": "Marker size"
                         },
                         "markerColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Marker color"
                         },
                         "showSeries": {
@@ -555,7 +2358,7 @@
                             "description": "Set trend line name"
                         },
                         "lineColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color",
                             "description": "Set trend line color"
                         },
@@ -593,7 +2396,7 @@
                             "description": "Set reference line numeric value"
                         },
                         "lineColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color",
                             "description": "Set reference line color"
                         },
@@ -624,7 +2427,7 @@
                             "description": "Display a data label for the reference line"
                         },
                         "dataLabelColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color",
                             "description": "Set the reference line data label color"
                         },
@@ -672,7 +2475,7 @@
                             "description": "Set reference line numeric value"
                         },
                         "lineColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color",
                             "description": "Set reference line color"
                         },
@@ -703,7 +2506,7 @@
                             "description": "Display a data label for the reference line"
                         },
                         "dataLabelColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color",
                             "description": "Set the reference line data label color"
                         },
@@ -736,7 +2539,7 @@
                     "type": "object",
                     "properties": {
                         "lineColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Line color"
                         },
                         "transparency": {
@@ -762,7 +2565,7 @@
                             "title": "Show"
                         },
                         "fillColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Fill color"
                         },
                         "transparency": {
@@ -789,7 +2592,7 @@
                             "title": "Show"
                         },
                         "color": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color",
                             "description": "Select color for data labels"
                         },
@@ -816,7 +2619,7 @@
                     "type": "object",
                     "properties": {
                         "color": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color",
                             "description": "Select color for data labels"
                         },
@@ -834,7 +2637,7 @@
                     "type": "object",
                     "properties": {
                         "color": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color",
                             "description": "Select color for data labels"
                         },
@@ -865,7 +2668,7 @@
                             "title": "Outline"
                         },
                         "outlineColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Outline color",
                             "description": "Color of the outline"
                         },
@@ -880,7 +2683,7 @@
                             "description": "Display a bar to the left side of the card as an accent"
                         },
                         "barColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Bar color"
                         },
                         "barWeight": {
@@ -894,7 +2697,7 @@
                             "description": "Background"
                         },
                         "cardBackground": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Background"
                         }
                     }
@@ -908,7 +2711,7 @@
                             "title": "Show"
                         },
                         "color": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color",
                             "description": "Select color for data labels"
                         },
@@ -948,7 +2751,7 @@
                             "title": "Show"
                         },
                         "color": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color",
                             "description": "Select color for data labels"
                         },
@@ -978,7 +2781,7 @@
                             "title": "Show"
                         },
                         "color": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color",
                             "description": "Select color for data labels"
                         },
@@ -1014,7 +2817,7 @@
                             "description": "Set forecast confidence band style"
                         },
                         "lineColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color",
                             "description": "Set forecast line color"
                         },
@@ -1129,7 +2932,7 @@
                             "description": "Set reference line numeric value"
                         },
                         "lineColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color",
                             "description": "Set reference line color"
                         },
@@ -1160,7 +2963,7 @@
                             "description": "Display a data label for the reference line"
                         },
                         "dataLabelColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color",
                             "description": "Set the reference line data label color"
                         },
@@ -1216,12 +3019,12 @@
                             "title": "Show"
                         },
                         "upperShadingColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Upper shading",
                             "description": "Shading color of the upper region"
                         },
                         "lowerShadingColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Lower shading",
                             "description": "Shading color of the lower region"
                         },
@@ -1240,7 +3043,7 @@
                             "title": "Show"
                         },
                         "lineColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color",
                             "description": "Set reference line color"
                         },
@@ -1263,7 +3066,7 @@
                     "type": "object",
                     "properties": {
                         "outlineColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Outline color",
                             "description": "Color of the outline"
                         },
@@ -1278,7 +3081,7 @@
                             "description": "Show/Hide the vertical gridlines"
                         },
                         "gridVerticalColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Vert grid color",
                             "description": "Color for the vertical gridlines"
                         },
@@ -1293,7 +3096,7 @@
                             "description": "Show/Hide the horizontal gridlines"
                         },
                         "gridHorizontalColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Horiz grid color",
                             "description": "Color for the horizontal gridlines"
                         },
@@ -1335,12 +3138,12 @@
                             "title": "Outline"
                         },
                         "fontColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Font color",
                             "description": "Font color of the cells"
                         },
                         "backColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Background color",
                             "description": "Background color of the cells"
                         },
@@ -1384,26 +3187,26 @@
                             "title": "Outline"
                         },
                         "backColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color scales"
                         },
                         "fontColorPrimary": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Font color",
                             "description": "Font color of the odd rows"
                         },
                         "backColorPrimary": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Background color",
                             "description": "Background color of the odd rows"
                         },
                         "fontColorSecondary": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Alternate font color",
                             "description": "Font color of the even rows"
                         },
                         "backColorSecondary": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Alternate background color",
                             "description": "Background color of the even rows"
                         },
@@ -1453,12 +3256,12 @@
                             "title": "Outline"
                         },
                         "fontColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Font color",
                             "description": "Font color of the cells"
                         },
                         "backColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Background color",
                             "description": "Background color of the cells"
                         },
@@ -1485,12 +3288,12 @@
                     "type": "object",
                     "properties": {
                         "fontColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Font color",
                             "description": "Font color of the cells"
                         },
                         "backColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Background color",
                             "description": "Background color of the cells"
                         },
@@ -1529,12 +3332,12 @@
                             "title": "Outline"
                         },
                         "fontColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Font color",
                             "description": "Font color of the cells"
                         },
                         "backColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Background color",
                             "description": "Background color of the cells"
                         },
@@ -1584,12 +3387,12 @@
                             "title": "Outline"
                         },
                         "fontColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Font color",
                             "description": "Font color of the cells"
                         },
                         "backColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Background color",
                             "description": "Background color of the cells"
                         },
@@ -1636,12 +3439,12 @@
                             "title": "Show"
                         },
                         "fontColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Font color",
                             "description": "Font color of the cells"
                         },
                         "background": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Background"
                         },
                         "outline": {
@@ -1671,12 +3474,12 @@
                     "type": "object",
                     "properties": {
                         "fontColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Font color",
                             "description": "Font color of the cells"
                         },
                         "background": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Background"
                         },
                         "outline": {
@@ -1707,7 +3510,7 @@
                     "type": "object",
                     "properties": {
                         "fontColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Font color",
                             "description": "Font color of the cells"
                         },
@@ -1720,7 +3523,7 @@
                             "title": "Font family"
                         },
                         "background": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Background"
                         }
                     }
@@ -1733,7 +3536,7 @@
                             "title": "Show"
                         },
                         "color": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Color"
                         }
                     }
@@ -1751,19 +3554,19 @@
                     "type": "object",
                     "properties": {
                         "increaseFill": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Increase"
                         },
                         "decreaseFill": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Decrease"
                         },
                         "totalFill": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Total"
                         },
                         "otherFill": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Other"
                         }
                     }
@@ -1827,15 +3630,15 @@
                             "title": "Direction"
                         },
                         "goodColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Good Color"
                         },
                         "neutralColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Neutral Color"
                         },
                         "badColor": {
-                            "$ref": "#/definitions/fill",
+                            "$ref": "#/definitions/fill-options",
                             "title": "Bad Color"
                         }
                     }
