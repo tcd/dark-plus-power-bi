@@ -1,5 +1,5 @@
 {
-    "$id": "https://raw.githubusercontent.com/tcd/dark-plus-power-bi/master/src/schema/card-properties.schema.json",
+    "$id": "https://raw.githubusercontent.com/tcd/dark-plus-power-bi/master/src/json/schema/card-properties.schema.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Power BI Report Theme Visual Styles",
     "description": "See (the official documentation)[https://docs.microsoft.com/en-us/power-bi/create-reports/desktop-report-themes#report-theme-json-file-format] for more information.",
