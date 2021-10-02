@@ -11,7 +11,8 @@
     "build": {
       "patterns": [
         "src/json/theme.jsonc",
-        "src/json/schema/schema.jsonc"
+        "src/json/schema/schema.jsonc",
+        "src/json/schema/card-properties-v2.schema.jsonc"
       ],
       "verbose": true,
       "runOnChangesOnly": true
