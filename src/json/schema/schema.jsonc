@@ -65,6 +65,7 @@
         // =========================================================================
         "visualStyles": {
             "type": "object",
+            "title": "Visual Styles",
             "properties": {
             },
         },
@@ -95,7 +96,7 @@
             "properties": {
                 "fontSize": { "type": "number", "description": "font-size" },
                 "fontFace": { "type": "string", "description": "@font-face" },
-                "color":    { "$ref": "#/definitions/hex-color", "description": "font-color" },
+                "color":    { "$ref": "#/definitions/hex-color" },
             },
         },
         "icon-options": {
