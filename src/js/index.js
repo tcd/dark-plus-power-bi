@@ -35,12 +35,16 @@ const buildFiles = async (filesToBuild) => {
 
 const filesToBuild = [
     {
+        "inPath":  ["src", "json", "theme.jsonc"],
+        "outPath": ["out", "dark-plus-report-theme.json"],
+    },
+    {
         "inPath":  ["src", "json", "schema", "schema.jsonc"],
         "outPath": ["out", "report-theme.schema.json"],
     },
     {
-        "inPath":  ["src", "json", "theme.jsonc"],
-        "outPath": ["out", "dark-plus-report-theme.json"],
+        "inPath":  ["src", "json", "schema", "card-properties-v2.schema.jsonc"],
+        "outPath": ["out", "card-properties.schema.jsonc"],
     },
 ]
 
