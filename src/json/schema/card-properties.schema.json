@@ -1141,7 +1141,10 @@
                             "title": "Decimal Places"
                         },
                         "dataLabelHorizontalPosition": {
-                            "enum": [],
+                            "enum": [
+                                "left",
+                                "right"
+                            ],
                             "title": "Horizontal Position",
                             "description": "Set the horizontal position for the reference line data label"
                         },
