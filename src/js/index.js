@@ -44,7 +44,7 @@ const filesToBuild = [
     },
     {
         "inPath":  ["src", "json", "schema", "card-properties-v2.schema.jsonc"],
-        "outPath": ["out", "card-properties.schema.jsonc"],
+        "outPath": ["out", "card-properties.schema.json"],
     },
 ]
 

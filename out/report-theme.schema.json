@@ -180,6 +180,42 @@
         "color-properties-2": {
             "description": "These colors set the various gradient colors in the conditional formatting dialog box.",
             "$ref": "#/definitions/hex-color"
+        },
+        "visual-names": {
+            "enum": [
+                "areaChart",
+                "barChart",
+                "basicShape",
+                "card",
+                "clusteredBarChart",
+                "clusteredColumnChart",
+                "columnChart",
+                "comboChart",
+                "donutChart",
+                "filledMap",
+                "funnel",
+                "gauge",
+                "general",
+                "hundredPercentStackedBarChart",
+                "hundredPercentStackedColumnChart",
+                "image",
+                "kpi",
+                "lineChart",
+                "lineClusteredColumnComboChart",
+                "lineStackedColumnComboChart",
+                "map",
+                "multiRowCard",
+                "pieChart",
+                "pivotTable",
+                "ribbonChart",
+                "scatterChart",
+                "shapeMap",
+                "slicer",
+                "stackedAreaChart",
+                "tableEx",
+                "treemap",
+                "waterfallChart"
+            ]
         }
     }
 }
