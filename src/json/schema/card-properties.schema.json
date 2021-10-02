@@ -289,7 +289,7 @@
                             "title": "Title text size"
                         },
                         "axisLabel": {
-                            "type": "none",
+                            "type": "string",
                             "title": "Y-Axis (Column)"
                         },
                         "secShow": {
@@ -302,7 +302,7 @@
                             "description": "Align the zero tick marks for both value axes"
                         },
                         "secAxisLabel": {
-                            "type": "none",
+                            "type": "string",
                             "title": "Y-Axis (Line)"
                         },
                         "secPosition": {
@@ -1032,7 +1032,7 @@
                             "title": "Line style"
                         },
                         "transform": {
-                            "type": "queryTransform"
+                            "description": "queryTransform"
                         }
                     }
                 },
@@ -1082,7 +1082,7 @@
                     "type": "object",
                     "properties": {
                         "map": {
-                            "type": "geoJson"
+                            "description": "geoJson"
                         },
                         "projectionEnum": {
                             "enum": [
@@ -1790,7 +1790,6 @@
                             "description": "Select the number of decimal places to display for the values"
                         },
                         "kpiFormat": {
-                            "type": "text",
                             "title": "Format"
                         }
                     }
