@@ -5,6 +5,26 @@
     "description": "See (the official documentation)[https://docs.microsoft.com/en-us/power-bi/create-reports/desktop-report-themes#report-theme-json-file-format] for more information.",
     "type": "object",
     "definitions": {
+        "hex-color": {
+            "type": "string",
+            "description": "HEX color code",
+            "pattern": "^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$"
+        },
+        "fill": {
+            "type": "object",
+            "required": [ "solid" ],
+            "properties": {
+                "solid": {
+                    "type": "object",
+                    "required": [ "color" ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/hex-color"
+                        }
+                    }
+                }
+            }
+        },
         "display-units": {
             "type": "string",
             "title": "Display Units",
@@ -15,6 +35,14 @@
                 "Millions",
                 "Billions",
                 "Trillions"
+            ]
+        },
+        "label-precision": {
+            "type": [ "string", "number" ],
+            "examples": [
+                "Auto",
+                1,
+                0
             ]
         }
     },
@@ -54,7 +82,7 @@
                             "description": "Display a title for legend symbols"
                         },
                         "labelColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color"
                         },
                         "fontFamily": {
@@ -119,7 +147,7 @@
                             "title": "Style"
                         },
                         "labelColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color"
                         },
                         "fontFamily": {
@@ -148,7 +176,7 @@
                             "title": "Minimum category width"
                         },
                         "titleColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Title color"
                         },
                         "titleFontFamily": {
@@ -168,7 +196,7 @@
                             "description": "Select left or right"
                         },
                         "color": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color",
                             "description": "Select color for data labels"
                         },
@@ -229,7 +257,7 @@
                             "title": "Style"
                         },
                         "labelColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color"
                         },
                         "fontFamily": {
@@ -249,7 +277,7 @@
                             "description": "Select the number of decimal places to display for the values"
                         },
                         "titleColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Title color"
                         },
                         "titleFontFamily": {
@@ -316,7 +344,7 @@
                             "title": "Style"
                         },
                         "secLabelColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color"
                         },
                         "secFontFamily": {
@@ -336,7 +364,7 @@
                             "description": "Select the number of decimal places to display for the values"
                         },
                         "secTitleColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Title color"
                         },
                         "secTitleFontFamily": {
@@ -353,15 +381,15 @@
                     "type": "object",
                     "properties": {
                         "defaultColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Default color, Default Column Color"
                         },
                         "fill": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Fill"
                         },
                         "defaultCategoryColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Default Color, Default Column Color"
                         },
                         "showAllDataPoints": {
@@ -382,7 +410,7 @@
                             "title": "Show"
                         },
                         "color": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color",
                             "description": "Select color for data labels"
                         },
@@ -491,7 +519,7 @@
                             "title": "Marker size"
                         },
                         "markerColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Marker color"
                         },
                         "showSeries": {
@@ -527,7 +555,7 @@
                             "description": "Set trend line name"
                         },
                         "lineColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color",
                             "description": "Set trend line color"
                         },
@@ -565,7 +593,7 @@
                             "description": "Set reference line numeric value"
                         },
                         "lineColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color",
                             "description": "Set reference line color"
                         },
@@ -596,7 +624,7 @@
                             "description": "Display a data label for the reference line"
                         },
                         "dataLabelColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color",
                             "description": "Set the reference line data label color"
                         },
@@ -644,7 +672,7 @@
                             "description": "Set reference line numeric value"
                         },
                         "lineColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color",
                             "description": "Set reference line color"
                         },
@@ -675,7 +703,7 @@
                             "description": "Display a data label for the reference line"
                         },
                         "dataLabelColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color",
                             "description": "Set the reference line data label color"
                         },
@@ -708,7 +736,7 @@
                     "type": "object",
                     "properties": {
                         "lineColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Line color"
                         },
                         "transparency": {
@@ -734,7 +762,7 @@
                             "title": "Show"
                         },
                         "fillColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Fill color"
                         },
                         "transparency": {
@@ -761,7 +789,7 @@
                             "title": "Show"
                         },
                         "color": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color",
                             "description": "Select color for data labels"
                         },
@@ -788,7 +816,7 @@
                     "type": "object",
                     "properties": {
                         "color": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color",
                             "description": "Select color for data labels"
                         },
@@ -806,7 +834,7 @@
                     "type": "object",
                     "properties": {
                         "color": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color",
                             "description": "Select color for data labels"
                         },
@@ -837,7 +865,7 @@
                             "title": "Outline"
                         },
                         "outlineColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Outline color",
                             "description": "Color of the outline"
                         },
@@ -852,7 +880,7 @@
                             "description": "Display a bar to the left side of the card as an accent"
                         },
                         "barColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Bar color"
                         },
                         "barWeight": {
@@ -866,7 +894,7 @@
                             "description": "Background"
                         },
                         "cardBackground": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Background"
                         }
                     }
@@ -880,7 +908,7 @@
                             "title": "Show"
                         },
                         "color": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color",
                             "description": "Select color for data labels"
                         },
@@ -920,7 +948,7 @@
                             "title": "Show"
                         },
                         "color": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color",
                             "description": "Select color for data labels"
                         },
@@ -950,7 +978,7 @@
                             "title": "Show"
                         },
                         "color": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color",
                             "description": "Select color for data labels"
                         },
@@ -986,7 +1014,7 @@
                             "description": "Set forecast confidence band style"
                         },
                         "lineColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color",
                             "description": "Set forecast line color"
                         },
@@ -1101,7 +1129,7 @@
                             "description": "Set reference line numeric value"
                         },
                         "lineColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color",
                             "description": "Set reference line color"
                         },
@@ -1132,7 +1160,7 @@
                             "description": "Display a data label for the reference line"
                         },
                         "dataLabelColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color",
                             "description": "Set the reference line data label color"
                         },
@@ -1188,12 +1216,12 @@
                             "title": "Show"
                         },
                         "upperShadingColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Upper shading",
                             "description": "Shading color of the upper region"
                         },
                         "lowerShadingColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Lower shading",
                             "description": "Shading color of the lower region"
                         },
@@ -1212,7 +1240,7 @@
                             "title": "Show"
                         },
                         "lineColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color",
                             "description": "Set reference line color"
                         },
@@ -1235,7 +1263,7 @@
                     "type": "object",
                     "properties": {
                         "outlineColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Outline color",
                             "description": "Color of the outline"
                         },
@@ -1250,7 +1278,7 @@
                             "description": "Show/Hide the vertical gridlines"
                         },
                         "gridVerticalColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Vert grid color",
                             "description": "Color for the vertical gridlines"
                         },
@@ -1265,7 +1293,7 @@
                             "description": "Show/Hide the horizontal gridlines"
                         },
                         "gridHorizontalColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Horiz grid color",
                             "description": "Color for the horizontal gridlines"
                         },
@@ -1307,12 +1335,12 @@
                             "title": "Outline"
                         },
                         "fontColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Font color",
                             "description": "Font color of the cells"
                         },
                         "backColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Background color",
                             "description": "Background color of the cells"
                         },
@@ -1356,26 +1384,26 @@
                             "title": "Outline"
                         },
                         "backColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color scales"
                         },
                         "fontColorPrimary": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Font color",
                             "description": "Font color of the odd rows"
                         },
                         "backColorPrimary": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Background color",
                             "description": "Background color of the odd rows"
                         },
                         "fontColorSecondary": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Alternate font color",
                             "description": "Font color of the even rows"
                         },
                         "backColorSecondary": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Alternate background color",
                             "description": "Background color of the even rows"
                         },
@@ -1425,12 +1453,12 @@
                             "title": "Outline"
                         },
                         "fontColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Font color",
                             "description": "Font color of the cells"
                         },
                         "backColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Background color",
                             "description": "Background color of the cells"
                         },
@@ -1457,12 +1485,12 @@
                     "type": "object",
                     "properties": {
                         "fontColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Font color",
                             "description": "Font color of the cells"
                         },
                         "backColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Background color",
                             "description": "Background color of the cells"
                         },
@@ -1501,12 +1529,12 @@
                             "title": "Outline"
                         },
                         "fontColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Font color",
                             "description": "Font color of the cells"
                         },
                         "backColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Background color",
                             "description": "Background color of the cells"
                         },
@@ -1556,12 +1584,12 @@
                             "title": "Outline"
                         },
                         "fontColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Font color",
                             "description": "Font color of the cells"
                         },
                         "backColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Background color",
                             "description": "Background color of the cells"
                         },
@@ -1608,12 +1636,12 @@
                             "title": "Show"
                         },
                         "fontColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Font color",
                             "description": "Font color of the cells"
                         },
                         "background": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Background"
                         },
                         "outline": {
@@ -1643,12 +1671,12 @@
                     "type": "object",
                     "properties": {
                         "fontColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Font color",
                             "description": "Font color of the cells"
                         },
                         "background": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Background"
                         },
                         "outline": {
@@ -1679,7 +1707,7 @@
                     "type": "object",
                     "properties": {
                         "fontColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Font color",
                             "description": "Font color of the cells"
                         },
@@ -1692,7 +1720,7 @@
                             "title": "Font family"
                         },
                         "background": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Background"
                         }
                     }
@@ -1705,7 +1733,7 @@
                             "title": "Show"
                         },
                         "color": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Color"
                         }
                     }
@@ -1723,19 +1751,19 @@
                     "type": "object",
                     "properties": {
                         "increaseFill": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Increase"
                         },
                         "decreaseFill": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Decrease"
                         },
                         "totalFill": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Total"
                         },
                         "otherFill": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Other"
                         }
                     }
@@ -1800,15 +1828,15 @@
                             "title": "Direction"
                         },
                         "goodColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Good Color"
                         },
                         "neutralColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Neutral Color"
                         },
                         "badColor": {
-                            "type": "fill",
+                            "$ref": "#/definitions/fill",
                             "title": "Bad Color"
                         }
                     }

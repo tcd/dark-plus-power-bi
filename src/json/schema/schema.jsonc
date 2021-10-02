@@ -75,6 +75,7 @@
         // =========================================================================
         "hex-color": {
             "type": "string",
+            "description": "HEX color code",
             "pattern": "^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$",
         },
         "display-units": {
