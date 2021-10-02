@@ -6,8 +6,8 @@ const pkgDir = require("pkg-dir")
 const JSON5  = require("json5")
 
 /**
- * @param {string} inPath 
- * @param {string} outPath 
+ * @param {string} inPath
+ * @param {string} outPath
  */
 const convertJson = async (inPath, outPath) => {
     try {
@@ -16,7 +16,7 @@ const convertJson = async (inPath, outPath) => {
         const newJSONContent = JSON.stringify(oldJSONContent, null, 4)
 
         await fs.writeFile(outPath, newJSONContent)
-    
+
         console.log(`file written: ${outPath}`)
     } catch (error) {
        console.log(error)
@@ -24,26 +24,31 @@ const convertJson = async (inPath, outPath) => {
     }
 }
 
-const buildSchema = async () => {
+const buildFiles = async (filesToBuild) => {
     const rootDir = await pkgDir(__dirname)
-    const inPath  = path.join(rootDir, "src", "json", "schema", "schema.jsonc")
-    const outPath = path.join(rootDir, "out", "report-theme.schema.json")
-    await convertJson(inPath, outPath)
+    for (const file of filesToBuild) {
+        const inPath  = path.join(rootDir, ...file.inPath)
+        const outPath = path.join(rootDir, ...file.outPath)
+        await convertJson(inPath, outPath)
+    }
 }
 
-const buildTheme = async () => {
-    const rootDir = await pkgDir(__dirname)
-    const inPath  = path.join(rootDir, "src", "json", "theme.jsonc")
-    const outPath = path.join(rootDir, "out", "dark-plus-report-theme.json")
-    await convertJson(inPath, outPath)
-}
+const filesToBuild = [
+    {
+        "inPath":  ["src", "json", "schema", "schema.jsonc"],
+        "outPath": ["out", "report-theme.schema.json"],
+    },
+    {
+        "inPath":  ["src", "json", "theme.jsonc"],
+        "outPath": ["out", "dark-plus-report-theme.json"],
+    },
+]
 
 async function main() {
     try {
-        await buildTheme()
-        await buildSchema()
+        await buildFiles(filesToBuild)
     } catch (error) {
-        console.log(error)    
+        console.log(error)
         process.exit(1)
     }
 }
