@@ -1,6 +1,5 @@
 ﻿{
     "name": "Dark Plus",
-
     "dataColors": [
         "#9CDCFE",
         "#569CD6",
@@ -9,9 +8,32 @@
         "#B5CEA8",
         "#4EC9B0",
         "#CE9178",
-        "#D7BA7D"
+        "#D7BA7D",
+        "#3599B8",
+        "#DFBFBF",
+        "#4AC5BB",
+        "#5F6B6D",
+        "#FB8281",
+        "#F4D25A",
+        "#7F898A",
+        "#A4DDEE",
+        "#FDAB89",
+        "#B687AC",
+        "#28738A",
+        "#A78F8F",
+        "#168980",
+        "#293537",
+        "#BB4A4A",
+        "#B59525",
+        "#475052",
+        "#6A9FB0",
+        "#BD7150",
+        "#7B4F71",
+        "#1B4D5C",
+        "#706060",
+        "#0F5C55",
+        "#1C2325"
     ],
-
     "foreground": "#D4D4D4",
     "foregroundNeutralSecondary": "#D4D4D4",
     "foregroundNeutralTertiary": "#979593",
@@ -19,19 +41,11 @@
     "backgroundLight": "#3B3A39",
     "backgroundNeutral": "#605E5C",
     "tableAccent": "#2878BD",
-
-    "hyperlink": "#2878BD",
-    "visitedHyperlink": "#D0E4F5",
-
-    "bad": "#D16969",
-    "neutral": "#DCDCAA",
-    "good": "#608B4E",
-    "null": "#808080",
-
     "maximum": "#608B4E",
     "center": "#DCDCAA",
     "minimum": "#D16969",
-
+    "hyperlink": "#2878BD",
+    "visitedHyperlink": "#D0E4F5",
     "textClasses": {
         "callout": {
             "fontFace": "Arial",
@@ -85,7 +99,7 @@
                     {
                         "backgroundColor": {
                             "solid": {
-                                "color": "#1E1E1E"
+                                "color": "#333333"
                             }
                         },
                         "foregroundColor": {
@@ -93,7 +107,7 @@
                                 "color": "#D4D4D4"
                             }
                         },
-                        "transparency": 50,
+                        "transparency": 0,
                         "border": true,
                         "borderColor": {
                             "solid": {
@@ -102,7 +116,7 @@
                         },
                         "checkboxAndApplyColor": {
                             "solid": {
-                                "color": "#C586C0"
+                                "color": "#007ACC"
                             }
                         }
                     }
@@ -113,12 +127,12 @@
                         "transparency": 0,
                         "foregroundColor": {
                             "solid": {
-                                "color": "#D4D4D4"
+                                "color": "#608B4E"
                             }
                         },
                         "backgroundColor": {
                             "solid": {
-                                "color": "#C586C0"
+                                "color": "#333333"
                             }
                         },
                         "inputBoxColor": {
@@ -268,6 +282,9 @@
             }
         }
     },
+    "bad": "#D16969",
+    "neutral": "#DCDCAA",
+    "good": "#608B4E",
     "icons": {
         "RedUpArrow": {
             "description": "Red Up Arrow",
@@ -276,6 +293,14 @@
         "BlueDownArrow": {
             "description": "Blue Down Arrow",
             "url": "data&colon;image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'> <path fill='%233F9FEC' d='M 15 4 L 15 24.0625 L 10.71875 19.78125 L 9.28125 21.1875 L 16 27.90625 L 22.71875 21.1875 L 21.28125 19.78125 L 17 24.0625 L 17 4 Z'/> </svg>"
+        },
+        "Hamberger": {
+            "description": "Hamburger Menu",
+            "url": "data&colon;image/svg+xml;utf8, <svg style='width:24px;height:24px' viewBox='0 0 24 24'><path fill='#d4d4d4' d='M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z' /></svg>"
+        },
+        "Back Burger": {
+            "description": "Hamburger Menu ('Go Back')",
+            "url": "data&colon;image/svg+xml;utf8, <svg style='width:24px;height:24px' viewBox='0 0 24 24'><path fill='#d4d4d4' d='M5,13L9,17L7.6,18.42L1.18,12L7.6,5.58L9,7L5,11H21V13H5M21,6V8H11V6H21M21,16V18H11V16H21Z' /></svg>"
         }
     }
 }

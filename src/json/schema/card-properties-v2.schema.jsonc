@@ -6,47 +6,45 @@
     "type": "object",
     "definitions": {
         // =====================================================================
-        // Custom
+        // Shared
         // =====================================================================
-        "hex-color": {
-            "type": "string",
-            "description": "HEX color code",
-            "pattern": "^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$"
-        },
-        "fill-options": {
-            "type": "object",
-            "required": [ "solid" ],
-            "properties": {
-                "solid": {
-                    "type": "object",
-                    "required": [ "color" ],
-                    "properties": {
-                        "color": {
-                            "$ref": "#/definitions/hex-color"
+        "shared": {
+            "hex-color": {
+                "type": "string",
+                "description": "HEX color code",
+                "pattern": "^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$"
+            },
+            "fill-options": {
+                "type": "object",
+                "required": [ "solid" ],
+                "properties": {
+                    "solid": {
+                        "type": "object",
+                        "required": [ "color" ],
+                        "properties": {
+                            "color": {
+                                "$ref": "#/definitions/shared/hex-color"
+                            }
                         }
                     }
                 }
-            }
-        },
-        "display-units": {
-            "type": "string",
-            "title": "Display Units",
-            "description": "Select the units to display",
-            "enum": [
-                "None",
-                "Thousands",
-                "Millions",
-                "Billions",
-                "Trillions"
-            ]
-        },
-        "label-precision": {
-            "type": [ "string", "number" ],
-            "examples": [
-                "Auto",
-                1,
-                0
-            ]
+            },
+            "display-units": {
+                "type": "string",
+                "title": "Display Units",
+                "description": "Select the units to display",
+                "enum": [
+                    "None",
+                    "Thousands",
+                    "Millions",
+                    "Billions",
+                    "Trillions"
+                ]
+            },
+            "label-precision": {
+                "type": [ "string", "number" ],
+                "examples": [ "Auto", 1, 0 ]
+            },
         },
         // =====================================================================
         // Refactored from Microsoft
@@ -126,15 +124,8 @@
                     "title": "Position",
                     "description": "Select the location for the legend"
                 },
-                "showTitle": {
-                    "type": "boolean",
-                    "title": "Title",
-                    "description": "Display a title for legend symbols"
-                },
-                "labelColor": {
-                    "$ref": "#/definitions/fill-options",
-                    "title": "Color"
-                },
+                "showTitle": { "type": "boolean", "title": "Title", "description": "Display a title for legend symbols" },
+                "labelColor": { "$ref": "#/definitions/fill-options", "title": "Color" },
                 "fontFamily": { "$ref": "#/definitions/font-family-settings" },
                 "fontSize": { "$ref": "#/definitions/font-size-settings" }
             }
@@ -174,11 +165,7 @@
                     ],
                     "title": "Type"
                 },
-                "showAxisTitle": {
-                    "type": "boolean",
-                    "title": "Title",
-                    "description": "Title for the X-axis/Y-axis"
-                },
+                "showAxisTitle": { "type": "boolean", "title": "Title", "description": "Title for the X-axis/Y-axis" },
                 "axisStyle": {
                     "enum": [
                         "showTitleOnly",
@@ -187,27 +174,14 @@
                     ],
                     "title": "Style"
                 },
-                "labelColor": {
-                    "$ref": "#/definitions/fill-options",
-                    "title": "Color"
-                },
+                "labelColor": { "$ref": "#/definitions/fill-options", "title": "Color" },
                 "fontFamily": { "$ref": "#/definitions/font-family-settings" },
                 "fontSize": { "$ref": "#/definitions/font-size-settings" },
                 "labelDisplayUnits": { "$ref": "#/definitions/display-units" },
                 "labelPrecision": { "$ref": "#/definitions/precision-settings" },
-                "concatenateLabels": {
-                    "type": "boolean",
-                    "title": "Concatenate labels",
-                    "description": "Always concatenate levels of the hierarchy instead of drawing the hierarchy."
-                },
-                "preferredCategoryWidth": {
-                    "type": "number",
-                    "title": "Minimum category width"
-                },
-                "titleColor": {
-                    "$ref": "#/definitions/fill-options",
-                    "title": "Title color"
-                },
+                "concatenateLabels": { "type": "boolean", "title": "Concatenate labels", "description": "Always concatenate levels of the hierarchy instead of drawing the hierarchy." },
+                "preferredCategoryWidth": { "type": "number", "title": "Minimum category width" },
+                "titleColor": { "$ref": "#/definitions/fill-options", "title": "Title color" },
                 "titleFontFamily": { "$ref": "#/definitions/font-family-settings" },
                 "titleFontSize": { "type": "number", "title": "Title text size" },
                 "position": {
@@ -218,11 +192,7 @@
                     "title": "Position",
                     "description": "Select left or right"
                 },
-                "color": {
-                    "$ref": "#/definitions/fill-options",
-                    "title": "Color",
-                    "description": "Select color for data labels"
-                },
+                "color": { "$ref": "#/definitions/fill-options", "title": "Color", "description": "Select color for data labels" },
                 "duration": { "$ref": "#/definitions/number-settings" }
             }
         },
@@ -261,11 +231,7 @@
                     "title": "End",
                     "description": "Enter an ending value (either a number or a datetime) (optional)"
                 },
-                "showAxisTitle": {
-                    "type": "boolean",
-                    "title": "Title",
-                    "description": "Title for the Y-axis/X-axis"
-                },
+                "showAxisTitle": { "type": "boolean", "title": "Title", "description": "Title for the Y-axis/X-axis" },
                 "axisStyle": {
                     "enum": [
                         "showTitleOnly",
@@ -274,27 +240,17 @@
                     ],
                     "title": "Style"
                 },
-                "labelColor": {
-                    "$ref": "#/definitions/fill-options",
-                    "title": "Color"
-                },
+                "labelColor": { "$ref": "#/definitions/fill-options", "title": "Color" },
                 "fontFamily": { "$ref": "#/definitions/font-family-settings" },
                 "fontSize": { "$ref": "#/definitions/font-size-settings" },
                 "labelDisplayUnits": { "$ref": "#/definitions/display-units" },
                 "labelPrecision": { "$ref": "#/definitions/precision-settings" },
-                "titleColor": {
-                    "$ref": "#/definitions/fill-options",
-                    "title": "Title color"
-                },
+                "titleColor": { "$ref": "#/definitions/fill-options", "title": "Title color" },
                 "titleFontFamily": { "$ref": "#/definitions/font-family-settings" },
                 "titleFontSize": { "type": "number", "title": "Title text size" },
                 "axisLabel": { "type": "string", "title": "Y-Axis (Column)" },
                 "secShow": { "type": "boolean", "title": "Show secondary" },
-                "alignZeros": {
-                    "type": "boolean",
-                    "title": "Align zeros",
-                    "description": "Align the zero tick marks for both value axes"
-                },
+                "alignZeros": { "type": "boolean", "title": "Align zeros", "description": "Align the zero tick marks for both value axes" },
                 "secAxisLabel": { "type": "string", "title": "Y-Axis (Line)" },
                 "secPosition": {
                     "enum": [
@@ -311,21 +267,9 @@
                     ],
                     "title": "Scale type"
                 },
-                "secStart": {
-                    "type": "number",
-                    "title": "Start",
-                    "description": "Enter a starting value (optional)"
-                },
-                "secEnd": {
-                    "type": "number",
-                    "title": "End",
-                    "description": "Enter an ending value (optional)"
-                },
-                "secShowAxisTitle": {
-                    "type": "boolean",
-                    "title": "Title",
-                    "description": "Title for the Y-axis"
-                },
+                "secStart": { "type": "number", "title": "Start", "description": "Enter a starting value (optional)" },
+                "secEnd": { "type": "number", "title": "End", "description": "Enter an ending value (optional)" },
+                "secShowAxisTitle": { "type": "boolean", "title": "Title", "description": "Title for the Y-axis" },
                 "secAxisStyle": {
                     "enum": [
                         "showTitleOnly",
@@ -334,45 +278,29 @@
                     ],
                     "title": "Style"
                 },
-                "secLabelColor": {
-                    "$ref": "#/definitions/fill-options",
-                    "title": "Color"
-                },
-                "secFontFamily": { "$ref": "#/definitions/font-family-settings" },
-                "secFontSize": { "$ref": "#/definitions/font-size-settings" },
+                "secLabelColor": { "$ref": "#/definitions/fill-options", "title": "Color" },
+                "secFontFamily":        { "$ref": "#/definitions/font-family-settings" },
+                "secFontSize":          { "$ref": "#/definitions/font-size-settings" },
                 "secLabelDisplayUnits": { "$ref": "#/definitions/display-units" },
-                "secLabelPrecision": { "$ref": "#/definitions/precision-settings" },
-                "secTitleColor": {
-                    "$ref": "#/definitions/fill-options",
-                    "title": "Title color"
-                },
-                "secTitleFontFamily": { "$ref": "#/definitions/font-family-settings"
-                },
+                "secLabelPrecision":    { "$ref": "#/definitions/precision-settings" },
+                "secTitleColor": { "$ref": "#/definitions/fill-options", "title": "Title color" },
+                "secTitleFontFamily": { "$ref": "#/definitions/font-family-settings" },
                 "secTitleFontSize": { "type": "number", "title": "Title text size" }
             }
         },
         "dataPoint": {
             "type": "object",
             "properties": {
-                "defaultColor": {
-                    "$ref": "#/definitions/fill-options",
-                    "title": "Default color, Default Column Color"
-                },
-                "fill": {
-                    "$ref": "#/definitions/fill-options",
-                    "title": "Fill"
-                },
-                "defaultCategoryColor": {
-                    "$ref": "#/definitions/fill-options",
-                    "title": "Default Color, Default Column Color"
-                },
-                "showAllDataPoints": { "type": "boolean", "title": "Show all" }
+                "defaultColor":         { "$ref": "#/definitions/fill-options", "title": "Default color, Default Column Color" },
+                "fill":                 { "$ref": "#/definitions/fill-options", "title": "Fill" },
+                "defaultCategoryColor": { "$ref": "#/definitions/fill-options", "title": "Default Color, Default Column Color" },
+                "showAllDataPoints":    { "type": "boolean", "title": "Show all" }
             }
         },
         "labels": {
             "type": "object",
             "properties": {
-                "show": { "$ref": "#/definitions/show-settings" },
+                "show":       { "$ref": "#/definitions/show-settings" },
                 "showSeries": { "$ref": "#/definitions/show-settings" },
                 "color": {
                     "$ref": "#/definitions/fill-options",
@@ -380,11 +308,11 @@
                     "description": "Select color for data labels"
                 },
                 "labelDisplayUnits": { "$ref": "#/definitions/display-units" },
-                "labelPrecision": { "$ref": "#/definitions/precision-settings" },
-                "showAll": { "type": "boolean", "title": "Customize series" },
-                "fontSize": { "$ref": "#/definitions/font-size-settings" },
-                "fontFamily": { "$ref": "#/definitions/font-family-settings" },
-                "labelDensity": { "type": "number", "title": "Label density (whole number, percentage)" },
+                "labelPrecision":    { "$ref": "#/definitions/precision-settings" },
+                "showAll":           { "type": "boolean", "title": "Customize series" },
+                "fontSize":          { "$ref": "#/definitions/font-size-settings" },
+                "fontFamily":        { "$ref": "#/definitions/font-family-settings" },
+                "labelDensity":      { "type": "number", "title": "Label density (whole number, percentage)" },
                 "labelOrientation": {
                     "enum": [
                         "vertical",
@@ -433,7 +361,7 @@
                     ],
                     "title": "Join type"
                 },
-                "lineStyle": { "$ref": "#/definitions/line-style-settings" },
+                "lineStyle":  { "$ref": "#/definitions/line-style-settings" },
                 "showMarker": { "type": "boolean", "title": "Show marker" },
                 "markerShape": {
                     "enum": [
@@ -448,75 +376,37 @@
                     ],
                     "title": "Marker shape"
                 },
-                "markerSize": { "type": "number", "title": "Marker size" },
-                "markerColor": {
-                    "$ref": "#/definitions/fill-options",
-                    "title": "Marker color"
-                },
-                "showSeries": { "type": "boolean", "title": "Show, Customize series" },
-                "shadeArea": { "type": "boolean", "title": "Shade area" }
+                "markerSize":  { "type": "number",                     "title": "Marker size" },
+                "markerColor": { "$ref": "#/definitions/fill-options", "title": "Marker color" },
+                "showSeries":  { "type": "boolean",                    "title": "Show, Customize series" },
+                "shadeArea":   { "type": "boolean",                    "title": "Shade area" }
             }
         },
         "plotArea": {
             "type": "object",
             "properties": {
-                "transparency": {
-                    "type": "number",
-                    "title": "Transparency",
-                    "description": "Set transparency for background color"
-                }
+                "transparency": { "type": "number", "title": "Transparency", "description": "Set transparency for background color" }
             }
         },
         "trend": {
             "type": "object",
             "properties": {
-                "show": { "$ref": "#/definitions/show-settings" },
-                "title": {
-                    "type": "string",
-                    "title": "Name",
-                    "description": "Set trend line name"
-                },
-                "lineColor": {
-                    "$ref": "#/definitions/fill-options",
-                    "title": "Color",
-                    "description": "Set trend line color"
-                },
-                "transparency": {
-                    "type": "number",
-                    "title": "Transparency",
-                    "description": "Set transparency for trend line color"
-                },
-                "style": {
-                    "$ref": "#/definitions/line-style-settings",
-                    "description": "Set trend line style"
-                },
-                "combineSeries": {
-                    "type": "boolean",
-                    "title": "Combine Series",
-                    "description": "Show one trend line per series or combine"
-                }
+                "show":          { "$ref": "#/definitions/show-settings" },
+                "title":         { "type": "string",                            "title": "Name",           "description": "Set trend line name" },
+                "lineColor":     { "$ref": "#/definitions/fill-options",        "title": "Color",          "description": "Set trend line color" },
+                "transparency":  { "type": "number",                            "title": "Transparency",   "description": "Set transparency for trend line color" },
+                "style":         { "$ref": "#/definitions/line-style-settings",                            "description": "Set trend line style" },
+                "combineSeries": { "type": "boolean",                           "title": "Combine Series", "description": "Show one trend line per series or combine" }
             }
         },
         "y1AxisReferenceLine": {
             "type": "object",
             "properties": {
-                "show": { "$ref": "#/definitions/show-settings" },
-                "value": {
-                    "type": "number",
-                    "title": "Value",
-                    "description": "Set reference line numeric value"
-                },
-                "lineColor": {
-                    "$ref": "#/definitions/fill-options",
-                    "title": "Color",
-                    "description": "Set reference line color"
-                },
-                "transparency": {
-                    "type": "number",
-                    "title": "Transparency",
-                    "description": "Set transparency for reference line color"
-                },
-                "style": { "$ref": "#/definitions/line-style-settings" },
+                "show":         { "$ref": "#/definitions/show-settings" },
+                "value":        { "type": "number", "title": "Value", "description": "Set reference line numeric value" },
+                "lineColor":    { "$ref": "#/definitions/fill-options", "title": "Color", "description": "Set reference line color" },
+                "transparency": { "type": "number", "title": "Transparency", "description": "Set transparency for reference line color" },
+                "style":        { "$ref": "#/definitions/line-style-settings" },
                 "position": {
                     "enum": [
                         "back",
@@ -525,20 +415,9 @@
                     "title": "Position",
                     "description": "Arrange relative to chart data points"
                 },
-                "dataLabelShow": {
-                    "type": "boolean",
-                    "title": "Data label",
-                    "description": "Display a data label for the reference line"
-                },
-                "dataLabelColor": {
-                    "$ref": "#/definitions/fill-options",
-                    "title": "Color",
-                    "description": "Set the reference line data label color"
-                },
-                "dataLabelDecimalPoints": {
-                    "type": "number",
-                    "title": "Decimal Places"
-                },
+                "dataLabelShow":          { "type": "boolean", "title": "Data label", "description": "Display a data label for the reference line" },
+                "dataLabelColor":         { "$ref": "#/definitions/fill-options", "title": "Color", "description": "Set the reference line data label color" },
+                "dataLabelDecimalPoints": { "type": "number", "title": "Decimal Places" },
                 "dataLabelHorizontalPosition": {
                     "enum": [
                         "left",
@@ -563,26 +442,10 @@
             "type": "object",
             "properties": {
                 "show": { "$ref": "#/definitions/show-settings" },
-                "title": {
-                    "type": "string",
-                    "title": "Name",
-                    "description": "Set reference line name"
-                },
-                "value": {
-                    "type": "number",
-                    "title": "Value",
-                    "description": "Set reference line numeric value"
-                },
-                "lineColor": {
-                    "$ref": "#/definitions/fill-options",
-                    "title": "Color",
-                    "description": "Set reference line color"
-                },
-                "transparency": {
-                    "type": "number",
-                    "title": "Transparency",
-                    "description": "Set transparency for reference line color"
-                },
+                "title": { "type": "string", "title": "Name", "description": "Set reference line name" },
+                "value": { "type": "number", "title": "Value", "description": "Set reference line numeric value" },
+                "lineColor": { "$ref": "#/definitions/fill-options", "title": "Color", "description": "Set reference line color" },
+                "transparency": { "type": "number", "title": "Transparency", "description": "Set transparency for reference line color" },
                 "style": { "$ref": "#/definitions/line-style-settings" },
                 "position": {
                     "enum": [
@@ -838,9 +701,9 @@
         "mapControls": {
             "type": "object",
             "properties": {
-                "autoZoom": { "type": "boolean", "title": "Auto zoom" },
-                "zoomLevel": { "$ref": "#/definitions/number-settings" },
-                "centerLatitude": { "$ref": "#/definitions/number-settings" },
+                "autoZoom":        { "type": "boolean", "title": "Auto zoom" },
+                "zoomLevel":       { "$ref": "#/definitions/number-settings" },
+                "centerLatitude":  { "$ref": "#/definitions/number-settings" },
                 "centerLongitude": { "$ref": "#/definitions/number-settings" }
             }
         },
@@ -1079,9 +942,9 @@
                     "title": "Background color",
                     "description": "Background color of the cells"
                 },
-                "wordWrap": { "$ref": "#/definitions/word-wrap-settings" },
+                "wordWrap":   { "$ref": "#/definitions/word-wrap-settings" },
                 "fontFamily": { "$ref": "#/definitions/font-family-settings" },
-                "fontSize": { "$ref": "#/definitions/font-size-settings" },
+                "fontSize":   { "$ref": "#/definitions/font-size-settings" },
                 "autoSizeColumnWidth": { "type": "boolean", "title": "Auto-size column width" },
                 "urlIcon": {
                     "type": "boolean",
@@ -1124,8 +987,8 @@
                     "description": "Show an icon instead of the full URL"
                 },
                 "fontFamily": { "$ref": "#/definitions/font-family-settings" },
-                "fontSize": { "$ref": "#/definitions/font-size-settings" },
-                "wordWrap": { "$ref": "#/definitions/word-wrap-settings" },
+                "fontSize":   { "$ref": "#/definitions/font-size-settings" },
+                "wordWrap":   { "$ref": "#/definitions/word-wrap-settings" },
                 "bandedRowHeaders": {
                     "type": "boolean",
                     "title": "Banded row style",
@@ -1153,9 +1016,9 @@
                     "description": "Background color of the cells"
                 },
                 "applyToHeaders": { "type": "boolean", "title": "Apply to labels" },
-                "totals": { "type": "boolean", "title": "Totals" },
-                "fontFamily": { "$ref": "#/definitions/font-family-settings" },
-                "fontSize": { "$ref": "#/definitions/font-size-settings" }
+                "totals":         { "type": "boolean", "title": "Totals" },
+                "fontFamily":     { "$ref": "#/definitions/font-family-settings" },
+                "fontSize":       { "$ref": "#/definitions/font-size-settings" }
             }
         },
         "columnFormatting": {
@@ -1172,33 +1035,24 @@
                     "title": "Background color",
                     "description": "Background color of the cells"
                 },
-                "styleHeader": { "type": "boolean", "title": "Color header" },
-                "styleValues": { "type": "boolean", "title": "Color values" },
-                "styleTotal": { "type": "boolean", "title": "Color total" },
+                "styleHeader":    { "type": "boolean", "title": "Color header" },
+                "styleValues":    { "type": "boolean", "title": "Color values" },
+                "styleTotal":     { "type": "boolean", "title": "Color total" },
                 "styleSubtotals": { "type": "boolean", "title": "Color subtotals" }
             }
         },
         "rowHeaders": {
             "type": "object",
             "properties": {
-                "outline": { "$ref": "#/definitions/outline-settings" },
-                "fontColor": {
-                    "$ref": "#/definitions/fill-options",
-                    "title": "Font color",
-                    "description": "Font color of the cells"
-                },
-                "backColor": {
-                    "$ref": "#/definitions/fill-options",
-                    "title": "Background color",
-                    "description": "Background color of the cells"
-                },
-                "wordWrap": { "$ref": "#/definitions/word-wrap-settings" },
+                "outline":    { "$ref": "#/definitions/outline-settings" },
+                "fontColor":  { "$ref": "#/definitions/fill-options", "title": "Font color", "description": "Font color of the cells" },
+                "backColor":  { "$ref": "#/definitions/fill-options", "title": "Background color", "description": "Background color of the cells" },
+                "wordWrap":   { "$ref": "#/definitions/word-wrap-settings" },
                 "fontFamily": { "$ref": "#/definitions/font-family-settings" },
-                "fontSize": { "$ref": "#/definitions/font-size-settings" },
+                "fontSize":   { "$ref": "#/definitions/font-size-settings" },
                 "stepped": {
                     "type": "boolean",
-                    "title": "Stepped layout",
-                    "description": "Render row headers with stepped layout"
+                    "title": "Stepped layout", "description": "Render row headers with stepped layout"
                 },
                 "steppedLayoutIndentation": {
                     "type": "number",
@@ -1253,8 +1107,8 @@
                     "$ref": "#/definitions/fill-options",
                     "title": "Background"
                 },
-                "outline": { "$ref": "#/definitions/outline-settings" },
-                "textSize": { "$ref": "#/definitions/font-size-settings" },
+                "outline":    { "$ref": "#/definitions/outline-settings" },
+                "textSize":   { "$ref": "#/definitions/font-size-settings" },
                 "fontFamily": { "$ref": "#/definitions/font-family-settings" }
             }
         },
@@ -1270,8 +1124,8 @@
                     "$ref": "#/definitions/fill-options",
                     "title": "Background"
                 },
-                "outline": { "$ref": "#/definitions/outline-settings" },
-                "textSize": { "$ref": "#/definitions/font-size-settings" },
+                "outline"   : { "$ref": "#/definitions/outline-settings" },
+                "textSize"  : { "$ref": "#/definitions/font-size-settings" },
                 "fontFamily": { "$ref": "#/definitions/font-family-settings" }
             }
         },
@@ -1284,7 +1138,7 @@
                     "title": "Font color",
                     "description": "Font color of the cells"
                 },
-                "textSize": { "$ref": "#/definitions/font-size-settings" },
+                "textSize":   { "$ref": "#/definitions/font-size-settings" },
                 "fontFamily": { "$ref": "#/definitions/font-family-settings" },
                 "background": {
                     "$ref": "#/definitions/fill-options",
@@ -1343,7 +1197,7 @@
             "type": "object",
             "properties": {
                 "indicatorDisplayUnits": { "$ref": "#/definitions/display-units" },
-                "indicatorPrecision": { "$ref": "#/definitions/precision-settings" },
+                "indicatorPrecision":    { "$ref": "#/definitions/precision-settings" },
                 "kpiFormat": {
                     "title": "Format"
                 }
@@ -1358,7 +1212,7 @@
         "goals": {
             "type": "object",
             "properties": {
-                "showGoal": { "type": "boolean", "title": "Goal" },
+                "showGoal":     { "type": "boolean", "title": "Goal" },
                 "showDistance": { "type": "boolean", "title": "Distance" }
             }
         },
